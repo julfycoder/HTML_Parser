@@ -1,0 +1,8 @@
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.Buisness.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.Buisness.pdb
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.xml
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Buisness.csprojResolveAssemblyReference.cache
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Buisness.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Buisness.pdb

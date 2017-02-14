@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HTML_Parser.Business.Web
+{
+    public class URLManager : IURLManager
+    {
+        public string GetCorrectURL(string currentUrl)
+        {
+            if (currentUrl.Length > 1 && currentUrl.Substring(0, 2) == "//") currentUrl = "https:" + currentUrl;
+            return currentUrl;
+        }
+        public string GetCorrectURL(string currentUrl, string ParentUrl)
+        {
+            if (currentUrl.Count() > 1 && currentUrl.Substring(0, 2) == "//")
+            {
+                currentUrl = "https:" + currentUrl;                                                                 //Starts on '//'
+            }
+            else if (currentUrl.Count() > 5 && currentUrl.Substring(currentUrl.Count() - 5, 5).ToLower() == ".html" &&
+               ParentUrl.Substring(ParentUrl.Count() - 5, 5).ToLower() == ".html")
+            {
+                currentUrl = ParentUrl.Substring(0, (ParentUrl.Length - ParentUrl.Split('/').Last().Length - 1)) +
+                    "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];            //Ends on '.html'
+            }
+            else if ((currentUrl.Count() > 1 && currentUrl[0] == '/') ||     //Starts on '/'
+                    (currentUrl[0] == '/') ||                                //Single '/'
+                    (currentUrl.Count() > 2 && (currentUrl.Substring(0, 2) == ".." || currentUrl.Substring(0, 1) == ".")) ||//Starts on '..' 
+                    (currentUrl.Count() > 5 && currentUrl.Substring(currentUrl.Count() - 5, 5).ToLower() == ".html"&&!IsAbsoluteURL(currentUrl)))//Ends on '.html'
+            {
+                currentUrl = ParentUrl + "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];
+            }
+            else if ((currentUrl.Count() < 7) || ((currentUrl.Count() >= 7 && currentUrl.Substring(0, 7) != "http://")
+                && (currentUrl.Count() >= 8 && currentUrl.Substring(0, 8) != "https://")))
+            {
+                currentUrl = ParentUrl + "/" + currentUrl;                                                          //Starts on 'http://' or 'https://'
+            }
+            return currentUrl;
+        }
+        public bool IsAbsoluteURL(string urlString)
+        {
+            try
+            {
+                Uri url = new Uri(urlString);
+                return url.IsAbsoluteUri;
+            }
+            catch (Exception e) { return false; }
+        }
+        public bool IsBelongTo(Uri uri, Uri childUri)
+        {
+            if (childUri.AbsoluteUri.Length < uri.AbsoluteUri.Length) return false;
+            if (childUri.Host == uri.Host) return true;
+            if (childUri.Scheme != null && childUri.Scheme != "")
+            {
+                string[] uriHostFragments = uri.Host.Split('.');
+                string[] childHostFragments = childUri.Host.Split('.');
+
+                int coincidence = 0;
+                for (int i = 0; i < uriHostFragments.Length; i++)
+                {
+                    if (childHostFragments.Any(c => c == uriHostFragments[i])) coincidence++;
+                    else if (coincidence > 0) coincidence--;
+                    if (coincidence > 1) return true;
+                }
+            }
+            return false;
+        }
+        public bool IsForeignURL(string url, string parentUrl)
+        {
+            url = GetCorrectURL(url);
+            Uri parentUri = new Uri(parentUrl);
+            Uri childUri;
+            try
+            {
+                childUri = new Uri(GetCorrectURL(url, parentUrl));
+            }
+            catch (Exception e) { childUri = new Uri(parentUrl); }
+            return (((url.Count() >= 7 && url.Substring(0, 7) == "http://") || (url.Count() >= 8 && url.Substring(0, 8) == "https://")) &&
+                (!IsBelongTo(parentUri, childUri)));
+        }
+        public bool IsDomain(string url)
+        {
+            Uri uri;
+            try
+            {
+                uri = new Uri(url);
+            }
+            catch (Exception e) { uri = new Uri(GetCorrectURL(url)); }
+            bool isDomain = (uri.AbsolutePath == "/");
+            return isDomain;
+        }
+    }
+}

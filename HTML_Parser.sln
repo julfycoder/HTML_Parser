@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser", "HTML_Parser\HTML_Parser.csproj", "{F02376A2-BC6E-48C9-8DE4-5CFAC065C318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser.DAL", "HTML_Parser.DAL\HTML_Parser.DAL.csproj", "{CE9D2714-2A45-42D7-A1AA-4A8EB8B696B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser.Business", "HTML_Parser.Buisness\HTML_Parser.Business.csproj", "{6145E4DB-F9E0-46E6-AC86-84877C91332F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02376A2-BC6E-48C9-8DE4-5CFAC065C318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02376A2-BC6E-48C9-8DE4-5CFAC065C318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02376A2-BC6E-48C9-8DE4-5CFAC065C318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02376A2-BC6E-48C9-8DE4-5CFAC065C318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9D2714-2A45-42D7-A1AA-4A8EB8B696B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9D2714-2A45-42D7-A1AA-4A8EB8B696B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9D2714-2A45-42D7-A1AA-4A8EB8B696B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9D2714-2A45-42D7-A1AA-4A8EB8B696B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
