@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser.DAL", "HTML_Par
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser.Business", "HTML_Parser.Buisness\HTML_Parser.Business.csproj", "{6145E4DB-F9E0-46E6-AC86-84877C91332F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_Parser.Service", "HTML_Parser.Service\HTML_Parser.Service.csproj", "{8AC4E284-92B9-49BB-B29E-FE1F32D67F58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6145E4DB-F9E0-46E6-AC86-84877C91332F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC4E284-92B9-49BB-B29E-FE1F32D67F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC4E284-92B9-49BB-B29E-FE1F32D67F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC4E284-92B9-49BB-B29E-FE1F32D67F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC4E284-92B9-49BB-B29E-FE1F32D67F58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

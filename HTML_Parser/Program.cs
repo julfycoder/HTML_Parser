@@ -29,9 +29,9 @@ namespace HTML_Parser
                 x.For<ISiteTreeStringBuilder>().Use<SiteTreeStringBuilder>();
             });
 
-            string url = "http://www.wikipedia.org";
+            string url = "https://www.wikipedia.org";
             Parser p = new Parser(c);
-            p.Start(url, 10, 1, false);
+            p.Start(url, 10, 2);
             //p.CreateSiteTree(url);
             //Console.WriteLine("OK!");
 
