@@ -22,19 +22,27 @@ namespace HTML_Parser.DAL.IO
             fstream.Close();
         }
 
+        public string GetAllContent(string filePath)
+        {
+            FileStream fstream = File.Open(filePath, FileMode.OpenOrCreate);
+            StreamReader streamReader = new StreamReader(fstream);
+            string allContent = streamReader.ReadToEnd();
+            streamReader.Close();
+            fstream.Close();
+            return allContent;
+        }
+
+        public string GetLastString(string filePath)
+        {
+            string allContent = GetAllContent(filePath);
+            return allContent.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).Last();
+        }
+
         public void SaveString(string savingString, string filePath)
         {
-            FileStream fstream = File.Open(filePath, FileMode.Append|FileMode.OpenOrCreate);
+            FileStream fstream = File.Open(filePath, FileMode.Append | FileMode.OpenOrCreate);
             StreamWriter writer = new StreamWriter(fstream);
             writer.WriteLine(savingString);
-            writer.Close();
-            fstream.Close();
-        }
-        public void SaveText(string savingText, string filePath)
-        {
-            FileStream fstream = File.Create(filePath);
-            StreamWriter writer = new StreamWriter(fstream);
-            writer.WriteLine(savingText);
             writer.Close();
             fstream.Close();
         }

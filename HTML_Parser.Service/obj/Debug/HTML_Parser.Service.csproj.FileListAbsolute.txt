@@ -1,0 +1,6 @@
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe.config
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.pdb
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\obj\Debug\HTML_Parser.Service.csprojResolveAssemblyReference.cache
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\obj\Debug\HTML_Parser.Service.exe
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Service\obj\Debug\HTML_Parser.Service.pdb

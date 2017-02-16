@@ -1,0 +1,6 @@
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\bin\Debug\HTML_Parser.Common.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\bin\Debug\HTML_Parser.Common.pdb
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\bin\Debug\StructureMap.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\obj\Debug\HTML_Parser.Common.csprojResolveAssemblyReference.cache
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\obj\Debug\HTML_Parser.Common.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Common\obj\Debug\HTML_Parser.Common.pdb

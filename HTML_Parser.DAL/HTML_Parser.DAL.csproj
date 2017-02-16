@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\IParsingCommandsRepository.cs" />
     <Compile Include="Data\ISiteTreeRepository.cs" />
+    <Compile Include="Data\ParsingCommandsRepository.cs" />
     <Compile Include="IO\FileManager.cs" />
     <Compile Include="IO\IFileManager.cs" />
     <Compile Include="ISiteTreeStringBuilder.cs" />
@@ -83,7 +85,9 @@
     <Compile Include="SiteTreeStringBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

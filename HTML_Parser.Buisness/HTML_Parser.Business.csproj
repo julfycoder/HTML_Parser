@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parsing\IParsingManager.cs" />
+    <Compile Include="Parsing\ParsingManager.cs" />
+    <Compile Include="Threading\IThreadsManager.cs" />
+    <Compile Include="Threading\ThreadsManager.cs" />
     <Compile Include="Web\HTMLDocumentManager.cs" />
     <Compile Include="Web\IHTMLDocumentManager.cs" />
     <Compile Include="Parsing\IParsingStorage.cs" />
@@ -66,6 +70,7 @@
       <Name>HTML_Parser.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

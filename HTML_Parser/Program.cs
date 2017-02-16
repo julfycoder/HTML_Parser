@@ -8,6 +8,7 @@ using System.IO;
 using System.Threading;
 using HTML_Parser.Business.Parsing;
 using HTML_Parser.Business.Web;
+using HTML_Parser.Business.Threading;
 using HTML_Parser.DAL.Data;
 using HTML_Parser.DAL.IO;
 using HTML_Parser.DAL;
@@ -27,11 +28,12 @@ namespace HTML_Parser
                 x.For<ISiteTreeRepository>().Use<SiteTreeRepository>();
                 x.For<IFileManager>().Use<FileManager>();
                 x.For<ISiteTreeStringBuilder>().Use<SiteTreeStringBuilder>();
+                x.For<IThreadsManager>().Use<ThreadsManager>();
             });
 
             string url = "https://www.wikipedia.org";
-            Parser p = new Parser(c);
-            p.Start(url, 10, 2);
+            Parser p = new Parser(c.GetInstance<IHTMLDocumentManager>(),c.GetInstance<IURLManager>(),c.GetInstance<IParsingStorage>(),c.GetInstance<ISiteTreeRepository>(),c.GetInstance<IThreadsManager>());
+            p.Start(url, 10, 2,false);
             //p.CreateSiteTree(url);
             //Console.WriteLine("OK!");
 

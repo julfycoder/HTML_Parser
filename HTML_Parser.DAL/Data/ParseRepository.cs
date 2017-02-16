@@ -44,9 +44,13 @@ namespace HTML_Parser.DAL.Data
         {
             return context.WebPages;
         }
-        public WebPage GetWebPage(int Id)
+        public WebPage GetWebPage(int id)
         {
-            return context.WebPages.First(p => p.Id == Id);
+            return context.WebPages.First(p => p.Id == id);
+        }
+        public WebPage GetWebPage(string url)
+        {
+            return context.WebPages.First(p => p.URL == url);
         }
 
         public IEnumerable<ImageFile> GetImageFiles()

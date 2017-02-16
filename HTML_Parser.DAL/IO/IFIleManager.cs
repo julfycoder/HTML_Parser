@@ -11,6 +11,7 @@ namespace HTML_Parser.DAL.IO
         void CreateFile(string path,string name);
         void CreateFile(string name);
         void SaveString(string savingString, string filePath);
-        void SaveText(string savingString, string filePath);
+        string GetLastString(string filePath);
+        string GetAllContent(string filePath);
     }
 }

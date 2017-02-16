@@ -17,19 +17,22 @@ namespace HTML_Parser.Business.Parsing
         List<CssFile> dbCss = new List<CssFile>();
         List<ImageFile> dbImages = new List<ImageFile>();
 
-        public void Initialize(IContainer container)
+        public ParsingStorage(IParseRepository parseRepository)
         {
-            repository = container.GetInstance<IParseRepository>();
+            this.repository = parseRepository;
 
+        }
+        public void Initialize()
+        {
             dbPages = repository.GetWebPages().ToList();
             dbImages = repository.GetImageFiles().ToList();
             dbCss = repository.GetCssFiles().ToList();
+
         }
         public void SaveWebPages(object state)
         {
             WebPage page = (WebPage)state;
-            if (dbPages != null &&
-                (dbPages.Count() == 0 || dbPages.All(p => p.URL != page.URL)))
+            if (dbPages != null && (!dbPages.Any() || dbPages.All(p => p.URL != page.URL)))
             {
                 lock (repository)
                 {
@@ -54,9 +57,13 @@ namespace HTML_Parser.Business.Parsing
                 lock (repository) repository.AddEntity(image);
             }
         }
-        public WebPage GetWebPage(int Id)
+        public WebPage GetWebPage(int id)
         {
-            return dbPages.First(p => p.Id == Id);
+            return dbPages.First(p => p.Id == id);
+        }
+        public WebPage GetWebPage(string url)
+        {
+            return repository.GetWebPage(url);
         }
         public IEnumerable<WebPage> GetWebPages()
         {

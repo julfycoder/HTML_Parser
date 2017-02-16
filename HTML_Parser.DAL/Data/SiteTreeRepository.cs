@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using HTML_Parser.DAL.Data.Entities;
 using HTML_Parser.DAL;
 using HTML_Parser.DAL.IO;
-using StructureMap;
 
 namespace HTML_Parser.DAL.Data
 {
@@ -14,10 +13,10 @@ namespace HTML_Parser.DAL.Data
     {
         IFileManager fileManager;
         ISiteTreeStringBuilder siteTreeStringBuilder;
-        public void Initialize(IContainer container)
+        public SiteTreeRepository(IFileManager fileManager, ISiteTreeStringBuilder siteTreeStringBuilder)
         {
-            fileManager = container.GetInstance<IFileManager>();
-            siteTreeStringBuilder = container.GetInstance<ISiteTreeStringBuilder>();
+            this.fileManager = fileManager;
+            this.siteTreeStringBuilder = siteTreeStringBuilder;
         }
         public void SaveSiteTree(string url, List<WebPage> webPages)
         {

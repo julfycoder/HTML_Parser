@@ -10,7 +10,8 @@ namespace HTML_Parser.DAL.Data
     public interface IParseRepository
     {
         IEnumerable<WebPage> GetWebPages();
-        WebPage GetWebPage(int Id);
+        WebPage GetWebPage(int id);
+        WebPage GetWebPage(string url);
         IEnumerable<CssFile> GetCssFiles();
         IEnumerable<ImageFile> GetImageFiles();
 
