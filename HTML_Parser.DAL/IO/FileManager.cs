@@ -9,6 +9,9 @@ namespace HTML_Parser.DAL.IO
 {
     public class FileManager : IFileManager
     {
+        
+        public event FileSystemEventHandler Changed;
+
         public void CreateFile(string name)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + name;
@@ -45,6 +48,32 @@ namespace HTML_Parser.DAL.IO
             writer.WriteLine(savingString);
             writer.Close();
             fstream.Close();
+        }
+        public bool IsFileExists(string path)
+        {
+            return File.Exists(path);
+        }
+
+        public void Watch(string path)
+        {
+            //FileSystemWatcher watcher = new FileSystemWatcher();
+            //watcher.Path = AppDomain.CurrentDomain.BaseDirectory;
+            //watcher.Filter = path;
+            //watcher.NotifyFilter = NotifyFilters.LastWrite;
+            //watcher.Changed += Changed;
+            //watcher.EnableRaisingEvents = true;
+            FileWatcher watcher = new FileWatcher(path);
+            watcher.Changed += Changed;
+        }
+
+        public void Delete(string path)
+        {
+            File.Delete(path);
+        }
+
+        public void Copy(string oldPath, string newPath)
+        {
+            File.Copy(oldPath, newPath);
         }
     }
 }

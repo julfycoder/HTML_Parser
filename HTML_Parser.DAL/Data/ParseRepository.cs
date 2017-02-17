@@ -50,7 +50,14 @@ namespace HTML_Parser.DAL.Data
         }
         public WebPage GetWebPage(string url)
         {
-            return context.WebPages.First(p => p.URL == url);
+            try
+            {
+                return context.WebPages.First(p => p.URL == url);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public IEnumerable<ImageFile> GetImageFiles()

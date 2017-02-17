@@ -20,11 +20,12 @@ namespace HTML_Parser.DAL.Data
         }
         public void SaveSiteTree(string url, List<WebPage> webPages)
         {
+            DateTime dt = DateTime.Now;
             if (webPages.Any(p => p.URL == url))
             {
                 WebPage page = webPages.First(p => p.URL == url);
                 List<string> siteTree = siteTreeStringBuilder.CreateSiteTree(page, webPages);
-                string fileName = "( " + new Uri(url).Host + " )" + "__SiteTree.txt";
+                string fileName = CreateFileName(url);
                 fileManager.CreateFile(fileName);
                 fileManager.SaveString(DateTime.Now.ToString(), fileName);
                 foreach (string link in siteTree)
@@ -32,6 +33,18 @@ namespace HTML_Parser.DAL.Data
                     fileManager.SaveString(link, fileName);
                 }
             }
+        }
+        string CreateFileName(string url)
+        {
+            string fileExtension = ".txt";
+            string fileName = "( " + new Uri(url).Host + " )__SiteTree";
+            int count = 0;
+            while (fileManager.IsFileExists(fileName + count.ToString() + fileExtension))
+            {
+                count++;
+            }
+            fileName += count.ToString() + fileExtension;
+            return fileName;
         }
     }
 }

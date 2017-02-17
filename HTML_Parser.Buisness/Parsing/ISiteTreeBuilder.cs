@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace HTML_Parser.Business.Parsing
 {
-    public class ParsingManager : IParsingManager
+    public interface ISiteTreeBuilder
     {
-        public void Start()
-        {
-            //Parser p = new Parser();
-
-        }
+        void CreateSiteTree(string url);
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HTML_Parser.Business.Parsing
+namespace HTML_Parser.Business.Commands
 {
-    public interface IParsingManager
+    public interface ICommandsInterpreter
     {
-        void Start();
+        ICommand Interpret(string commandString);
     }
 }

@@ -55,8 +55,10 @@
   <ItemGroup>
     <Compile Include="Data\IParsingCommandsRepository.cs" />
     <Compile Include="Data\ISiteTreeRepository.cs" />
+    <Compile Include="Data\ParsingCommandsEventArgs.cs" />
     <Compile Include="Data\ParsingCommandsRepository.cs" />
     <Compile Include="IO\FileManager.cs" />
+    <Compile Include="IO\FileWatcher.cs" />
     <Compile Include="IO\IFileManager.cs" />
     <Compile Include="ISiteTreeStringBuilder.cs" />
     <Compile Include="Migrations\201702101534304_InitialCreate.cs" />

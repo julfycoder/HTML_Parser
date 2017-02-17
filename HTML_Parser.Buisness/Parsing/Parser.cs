@@ -14,13 +14,12 @@ using HTML_Parser.Business.Threading;
 namespace HTML_Parser.Business.Parsing
 {
 
-    public class Parser
+    public class Parser:IParser
     {
         IHTMLDocumentManager docManager;
         IURLManager urlManager;
         IThreadsManager threadsManager;
         IParsingStorage parsingStorage;
-        ISiteTreeRepository siteTreeRepository;
 
         HashSet<string> visitedPages = new HashSet<string>();
 
@@ -31,12 +30,11 @@ namespace HTML_Parser.Business.Parsing
         Dictionary<string, string> links = new Dictionary<string, string>();
         Dictionary<string, WebPage> storagePages = new Dictionary<string, WebPage>();
 
-        public Parser(IHTMLDocumentManager docManager,IURLManager urlManager,IParsingStorage parsingStorage,ISiteTreeRepository siteTreeRepository,IThreadsManager threadsManager)
+        public Parser(IHTMLDocumentManager docManager,IURLManager urlManager,IParsingStorage parsingStorage, IThreadsManager threadsManager)//, ISiteTreeRepository siteTreeRepository)
         {
             this.docManager = docManager;
             this.urlManager = urlManager;
             this.parsingStorage = parsingStorage;
-            this.siteTreeRepository = siteTreeRepository;
             this.threadsManager = threadsManager;
         }
 
@@ -47,14 +45,21 @@ namespace HTML_Parser.Business.Parsing
 
         public void Start(string url, int workerThreads = 10, int depth = -2, bool useForeignLinks = true)
         {
+            parsingStorage.Initialize();
             foreach (WebPage page in parsingStorage.GetWebPages()) if (!storagePages.ContainsKey(page.URL)) storagePages.Add(page.URL, page);
             this.useForeignLinks = useForeignLinks;
 
             threadsManager.SetMaxThreads(workerThreads, 10);
 
+            Initialize();
             links.Add(url, null);
 
             Parse(url, depth);
+        }
+        void Initialize()
+        {
+            links.Clear();
+            visitedPages.Clear();
         }
         void ParsePage(object state)
         {
@@ -96,8 +101,6 @@ namespace HTML_Parser.Business.Parsing
                 childsCount = links.Count;
                 depth--;
 
-                threadsManager.WaitAllThreads();
-
                 List<string> keys = new List<string>(links.Keys);
                 foreach (string link in keys)
                 {
@@ -111,6 +114,7 @@ namespace HTML_Parser.Business.Parsing
                         }
                     }
                 }
+                threadsManager.WaitAllThreads();
             }
         }
         WebPage CreatePage(string url, WebPage parentPage)//////////////////////////////??????????????????????
@@ -131,6 +135,10 @@ namespace HTML_Parser.Business.Parsing
         }
         void SavePage(int htmlSize, WebPage currentPage)
         {
+            lock (storagePages)
+            {
+                if (storagePages.ContainsKey(currentPage.URL)) return;
+            }
             WebPage lastPage;
             lock (parsingStorage)
             {
@@ -143,15 +151,9 @@ namespace HTML_Parser.Business.Parsing
                     ReferralPageId = currentPage.ReferralPageId
                 });
                 lastPage = parsingStorage.GetWebPages().Last();
-                
             }
-            lock (storagePages)
-            {
-                if (!storagePages.ContainsKey(lastPage.URL))
-                {
-                    storagePages.Add(lastPage.URL, lastPage);
-                }
-            }
+            lock(storagePages) if(storagePages.ContainsKey(lastPage.URL))storagePages.Add(lastPage.URL, lastPage);
+            
         }
         void SaveImages(string url, List<string> imagesLinks)
         {
@@ -183,21 +185,19 @@ namespace HTML_Parser.Business.Parsing
                 }
             }
         }
-        WebPage GetParentPage(string startUrl,string currentUrl)//////////////////////////??????????
+        WebPage GetParentPage(string startUrl, string currentUrl)//////////////////////////??????????
         {
-            WebPage parent;
-            if (visitedPages.Count != 0 && links[currentUrl] != null) parent = storagePages[links[currentUrl]];
-            else if (links[startUrl] != null && storagePages[links[startUrl]] != null)
-                parent = storagePages[links[startUrl]];
-            else parent = new WebPage { URL = startUrl };
-            return parent;
+            try
+            {
+                if (visitedPages.Count != 0 && links[currentUrl] != null)
+                    return storagePages[links[currentUrl]];
+                if (links[startUrl] != null && storagePages[links[startUrl]] != null)
+                    return storagePages[links[startUrl]];
+            }
+            catch (Exception) { }
+            return new WebPage { URL = startUrl };
         }
-        public void CreateSiteTree(string url)////////////////////////////??????????????????????
-        {
-            parsingStorage.Initialize();
-            List<WebPage> webPages = parsingStorage.GetWebPages().ToList();
-            siteTreeRepository.SaveSiteTree(url, webPages);
-        }
+        
         HtmlDocument GetHtmlDocument(string url)
         {
             watch.Restart();
@@ -205,7 +205,7 @@ namespace HTML_Parser.Business.Parsing
             watch.Stop();
             return doc;
         }
-        public long GetTimeToLoad()
+        long GetTimeToLoad()
         {
             return watch.ElapsedMilliseconds;
         }

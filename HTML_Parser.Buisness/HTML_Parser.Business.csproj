@@ -48,8 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parsing\IParsingManager.cs" />
-    <Compile Include="Parsing\ParsingManager.cs" />
+    <Compile Include="Commands\CommandsInterpreter.cs" />
+    <Compile Include="Commands\CommandsManager.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\CommandInfoBase.cs" />
+    <Compile Include="Commands\ICommandsInterpreter.cs" />
+    <Compile Include="Commands\ICommandsManager.cs" />
+    <Compile Include="Commands\ParseCommand.cs" />
+    <Compile Include="Commands\ParseCommandInfo.cs" />
+    <Compile Include="Parsing\IParser.cs" />
+    <Compile Include="Parsing\ISiteTreeBuilder.cs" />
+    <Compile Include="Parsing\SiteTreeBuilder.cs" />
     <Compile Include="Threading\IThreadsManager.cs" />
     <Compile Include="Threading\ThreadsManager.cs" />
     <Compile Include="Web\HTMLDocumentManager.cs" />
