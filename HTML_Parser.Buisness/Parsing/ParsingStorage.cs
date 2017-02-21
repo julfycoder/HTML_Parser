@@ -29,7 +29,7 @@ namespace HTML_Parser.Business.Parsing
             dbCss = repository.GetCssFiles().ToList();
 
         }
-        public void SaveWebPages(object state)
+        public void SaveWebPage(object state)
         {
             WebPage page = (WebPage)state;
             if (dbPages != null && (!dbPages.Any() || dbPages.All(p => p.URL != page.URL)))
@@ -41,7 +41,22 @@ namespace HTML_Parser.Business.Parsing
                 }
             }
         }
-        public void SaveCssFiles(object state)
+        public void SaveWebPages(IEnumerable<WebPage> pages)
+        {
+            //lock (repository)
+            //{
+            //    foreach (WebPage page in pages)
+            //    {
+            //        if (dbPages != null && (!dbPages.Any() || dbPages.All(p => p.URL != page.URL)))
+            //        {
+            //            repository.AddEntity(page);
+            //            dbPages.Add(repository.GetWebPage(page.URL));
+            //        }
+            //    }
+            //}
+
+        }
+        public void SaveCssFile(object state)
         {
             CssFile css = (CssFile)state;
             if (dbCss != null && dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
@@ -49,12 +64,32 @@ namespace HTML_Parser.Business.Parsing
                 lock (repository) repository.AddEntity(css);
             }
         }
-        public void SaveImageFiles(object state)
+        public void SaveCssFiles(IEnumerable<CssFile> cssFiles)
+        {
+            foreach (CssFile css in cssFiles)
+            {
+                if (dbCss != null && dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
+                {
+                    lock (repository) repository.AddEntity(css);
+                }
+            }
+        }
+        public void SaveImageFile(object state)
         {
             ImageFile image = (ImageFile)state;
             if (dbImages != null && dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
             {
                 lock (repository) repository.AddEntity(image);
+            }
+        }
+        public void SaveImageFiles(IEnumerable<ImageFile> imageFiles)
+        {
+            foreach (ImageFile image in imageFiles)
+            {
+                if (dbImages != null && dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
+                {
+                    lock (repository) repository.AddEntity(image);
+                }
             }
         }
         public WebPage GetWebPage(int id)

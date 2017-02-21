@@ -10,6 +10,7 @@ namespace HTML_Parser.Business.Commands
     public interface ICommandsManager
     {
         void WaitCommands(object sender,ParsingCommandsEventArgs e);
-        void ExecuteNextCommand();
+        void Start();
+        void Stop();
     }
 }

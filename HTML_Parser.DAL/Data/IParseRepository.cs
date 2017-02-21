@@ -16,6 +16,7 @@ namespace HTML_Parser.DAL.Data
         IEnumerable<ImageFile> GetImageFiles();
 
         void AddEntity<T>(T entity) where T : Entity;
+        void AddEntities<T>(IEnumerable<T> entities) where T : Entity;
         void RemoveEntity<T>(T entity) where T : Entity;
     }
 }

@@ -11,3 +11,6 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.Business.pdb
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Business.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Business.pdb
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.config
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.xml

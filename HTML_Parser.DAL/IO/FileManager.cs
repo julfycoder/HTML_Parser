@@ -12,9 +12,8 @@ namespace HTML_Parser.DAL.IO
         
         public event FileSystemEventHandler Changed;
 
-        public void CreateFile(string name)
+        public void CreateFile(string path)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + name;
             FileStream fstream = File.Create(path);
             fstream.Close();
         }
@@ -56,12 +55,6 @@ namespace HTML_Parser.DAL.IO
 
         public void Watch(string path)
         {
-            //FileSystemWatcher watcher = new FileSystemWatcher();
-            //watcher.Path = AppDomain.CurrentDomain.BaseDirectory;
-            //watcher.Filter = path;
-            //watcher.NotifyFilter = NotifyFilters.LastWrite;
-            //watcher.Changed += Changed;
-            //watcher.EnableRaisingEvents = true;
             FileWatcher watcher = new FileWatcher(path);
             watcher.Changed += Changed;
         }

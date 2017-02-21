@@ -1,0 +1,21 @@
+2017-02-21 18:42:13.1649 INFO Start
+2017-02-21 18:42:31.3930 INFO Command!!!: P|10|0|false|https://github.com/
+2017-02-21 18:42:31.4810 INFO Start to parse 'https://github.com/', with 10 threads, with depth = 0, foreign links = False
+2017-02-21 18:42:36.7222 INFO End of parsing
+2017-02-21 18:43:44.2155 INFO Command!!!: P|10|0|false|https://www.microsoft.com
+2017-02-21 18:43:44.4302 INFO Start to parse 'https://www.microsoft.com', with 10 threads, with depth = 0, foreign links = False
+2017-02-21 18:43:46.1701 INFO End of parsing
+2017-02-21 18:46:28.0720 INFO Start
+2017-02-21 18:46:43.2632 INFO Command!!!: P|10|0|false|https://www.yahoo.com
+2017-02-21 18:46:43.3517 INFO Start to parse 'https://www.yahoo.com', with 10 threads, with depth = 0, foreign links = False
+2017-02-21 18:46:49.4101 INFO End of parsing
+2017-02-21 19:05:47.0700 INFO Start
+2017-02-21 19:05:55.0779 INFO Command!!!: P|10|0|false|https://www.yahoo.com
+2017-02-21 19:05:55.4771 INFO Start to parse 'https://www.yahoo.com', with 10 threads, with depth = 0, foreign links = False
+2017-02-21 19:06:07.6031 INFO End of parsing
+2017-02-21 19:06:51.3741 INFO Command!!!: P|10|0|false|https://www.wikipedia.org
+2017-02-21 19:06:51.4427 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 0, foreign links = False
+2017-02-21 19:06:52.6757 INFO End of parsing
+2017-02-21 19:08:05.4150 INFO Command!!!: P|10|5|false|https://www.wikipedia.org
+2017-02-21 19:08:05.9301 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 5, foreign links = False
+2017-02-21 19:11:13.9887 ERROR Collection was modified; enumeration operation may not execute.

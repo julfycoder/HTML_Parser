@@ -19,14 +19,14 @@ namespace HTML_Parser.DAL.Data
         {
             this.fileManager = fileManager;
             fileManager.Changed += UpdateCommandAdded;
-            fileManager.Watch(commandsFileName);
+            fileManager.Watch(AppDomain.CurrentDomain.BaseDirectory+commandsFileName);
         }
         public string GetLastCommand()
         {
             string newFileName = "CommandsCopy.txt";
-            fileManager.Copy(commandsFileName, newFileName);
-            string lastString = fileManager.GetLastString(newFileName);
-            fileManager.Delete(newFileName);
+            fileManager.Copy(AppDomain.CurrentDomain.BaseDirectory + commandsFileName, AppDomain.CurrentDomain.BaseDirectory + newFileName);
+            string lastString = fileManager.GetLastString(AppDomain.CurrentDomain.BaseDirectory + newFileName);
+            fileManager.Delete(AppDomain.CurrentDomain.BaseDirectory + newFileName);
             return lastString;
         }
         void UpdateCommandAdded(object sender, FileSystemEventArgs e)

@@ -30,17 +30,9 @@ namespace HTML_Parser
                 });
             });
 
-            //string url = "https://www.wikipedia.org";
-            //Parser p = new Parser(c.GetInstance<IHTMLDocumentManager>(), c.GetInstance<IURLManager>(), c.GetInstance<IParsingStorage>(), c.GetInstance<IThreadsManager>());//, c.GetInstance<ISiteTreeRepository>());
-            ////p.Start(url, 10, 1, false);
-
-            //ISiteTreeBuilder builder = new SiteTreeBuilder(c.GetInstance<ISiteTreeRepository>(), c.GetInstance<IParsingStorage>());
-            //builder.CreateSiteTree(url);
-            //Console.WriteLine("OK!");
-
             ICommandsManager manager = c.GetInstance<ICommandsManager>();
 
-            manager.ExecuteNextCommand();
+            manager.Start();
             Console.ReadLine();
         }
     }

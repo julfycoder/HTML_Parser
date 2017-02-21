@@ -3,7 +3,6 @@ c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.csprojResolveAssemblyReference.cache
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.dll
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.pdb
-c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\HTML_Parser.DAL.dll.config
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\EntityFramework.dll
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\EntityFramework.SqlServer.dll
 c:\users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\EntityFramework.xml
@@ -13,3 +12,7 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.Migrations.NullParentWebPage.resources
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\StructureMap.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.Migrations.ReferralPageId.resources
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\NLog.config
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\NLog.dll
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\NLog.xml
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\HTML_Parser.DAL.dll.config

@@ -14,7 +14,7 @@ using HTML_Parser.Business.Threading;
 namespace HTML_Parser.Business.Parsing
 {
 
-    public class Parser:IParser
+    public class Parser : IParser
     {
         IHTMLDocumentManager docManager;
         IURLManager urlManager;
@@ -22,15 +22,13 @@ namespace HTML_Parser.Business.Parsing
         IParsingStorage parsingStorage;
 
         HashSet<string> visitedPages = new HashSet<string>();
+        Dictionary<string, string> links = new Dictionary<string, string>();
+        Dictionary<string, WebPage> storagePages = new Dictionary<string, WebPage>();
 
         bool useForeignLinks = true;
 
         Stopwatch watch = new Stopwatch();
-
-        Dictionary<string, string> links = new Dictionary<string, string>();
-        Dictionary<string, WebPage> storagePages = new Dictionary<string, WebPage>();
-
-        public Parser(IHTMLDocumentManager docManager,IURLManager urlManager,IParsingStorage parsingStorage, IThreadsManager threadsManager)//, ISiteTreeRepository siteTreeRepository)
+        public Parser(IHTMLDocumentManager docManager, IURLManager urlManager, IParsingStorage parsingStorage, IThreadsManager threadsManager)//, ISiteTreeRepository siteTreeRepository)
         {
             this.docManager = docManager;
             this.urlManager = urlManager;
@@ -64,7 +62,7 @@ namespace HTML_Parser.Business.Parsing
         void ParsePage(object state)
         {
             WebPage parsingPage = (WebPage)state;
-            
+
             visitedPages.Add(parsingPage.URL);
             HtmlDocument doc = GetHtmlDocument(parsingPage.URL);
             List<HtmlNode> nodes = docManager.GetAllNodes(doc);
@@ -82,13 +80,11 @@ namespace HTML_Parser.Business.Parsing
                 }
             }
 
-            SavePage(int.Parse(GetTimeToLoad().ToString()), parsingPage);
+            SavePage(parsingPage);
             SaveImages(parsingPage.URL, docManager.GetImagesUrls(nodes));
             SaveCssFiles(parsingPage.URL, docManager.GetCssFilesUrls(nodes));
 
             Console.WriteLine(parsingPage.URL);
-            //Console.WriteLine("Size: " + docManager.GetHtmlSize(doc));
-            //Console.WriteLine("Time to load: " + GetTimeToLoad());
             Console.WriteLine();
 
         }
@@ -101,11 +97,10 @@ namespace HTML_Parser.Business.Parsing
                 childsCount = links.Count;
                 depth--;
 
-                List<string> keys = new List<string>(links.Keys);
-                foreach (string link in keys)
+                foreach (string link in links.Keys)
                 {
                     WebPage parent = GetParentPage(url, link);
-                    if ((!visitedPages.Contains(urlManager.GetCorrectURL(link, parent.URL)) && (depth > -2) && 
+                    if ((!visitedPages.Contains(urlManager.GetCorrectURL(link, parent.URL)) && (depth > -2) &&
                         ((urlManager.IsForeignURL(link, parent.URL) == false && useForeignLinks == false) || useForeignLinks == true)))
                     {
                         if ((urlManager.GetCorrectURL(link, parent.URL) != parent.URL) || (visitedPages.Count == 0))
@@ -133,7 +128,7 @@ namespace HTML_Parser.Business.Parsing
                 ReferralPageId = referralPageId
             };
         }
-        void SavePage(int htmlSize, WebPage currentPage)
+        void SavePage(WebPage currentPage)
         {
             lock (storagePages)
             {
@@ -142,44 +137,47 @@ namespace HTML_Parser.Business.Parsing
             WebPage lastPage;
             lock (parsingStorage)
             {
-                parsingStorage.SaveWebPages(new WebPage
+                parsingStorage.SaveWebPage(new WebPage
                 {
                     URL = currentPage.URL,
                     TimeToLoad = int.Parse(GetTimeToLoad().ToString()),
-                    HTML_Size = htmlSize,
+                    HTML_Size = currentPage.HTML_Size,
                     ParentPageId = currentPage.ParentPageId,
                     ReferralPageId = currentPage.ReferralPageId
                 });
                 lastPage = parsingStorage.GetWebPages().Last();
             }
-            lock(storagePages) if(storagePages.ContainsKey(lastPage.URL))storagePages.Add(lastPage.URL, lastPage);
-            
+            lock (storagePages) if (!storagePages.ContainsKey(lastPage.URL)) storagePages.Add(lastPage.URL, lastPage);
         }
-        void SaveImages(string url, List<string> imagesLinks)
+        void SaveImages(string pageUrl, List<string> imagesLinks)
         {
+            WebPage page;
+            lock (parsingStorage) page = parsingStorage.GetWebPage(pageUrl);
             foreach (string link in imagesLinks)
             {
                 lock (parsingStorage)
                 {
-                    parsingStorage.SaveImageFiles(new ImageFile
+                    parsingStorage.SaveImageFile(new ImageFile
                     {
                         URL = link,
-                        WebPageId = parsingStorage.GetWebPage(url).Id,
+                        WebPageId = page.Id,
                         Name = link
                     });
                 }
             }
         }
-        void SaveCssFiles(string url, List<string> cssFiles)
+        void SaveCssFiles(string pageUrl, List<string> cssFiles)
         {
+            WebPage page;
+            lock (parsingStorage) page = parsingStorage.GetWebPage(pageUrl);
             foreach (string link in cssFiles)
             {
                 lock (parsingStorage)
                 {
-                    parsingStorage.SaveCssFiles(new CssFile
+                    parsingStorage.SaveCssFile(new CssFile
                     {
                         URL = link,
-                        WebPageId = parsingStorage.GetWebPage(url).Id,
+                        WebPageId = page.Id,
                         Name = link
                     });
                 }
@@ -197,7 +195,7 @@ namespace HTML_Parser.Business.Parsing
             catch (Exception) { }
             return new WebPage { URL = startUrl };
         }
-        
+
         HtmlDocument GetHtmlDocument(string url)
         {
             watch.Restart();

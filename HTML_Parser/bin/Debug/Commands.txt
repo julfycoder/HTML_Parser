@@ -1,1 +1,1 @@
-10|1|false|https://http://stackoverflow.com/questions/508399/structuremap-and-scanning-assemblies
+P|10|5|false|https://www.wikipedia.org

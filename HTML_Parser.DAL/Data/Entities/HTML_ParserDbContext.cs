@@ -10,9 +10,8 @@ namespace HTML_Parser.DAL.Data.Entities
 {
     public class HTML_ParserDbContext : DbContext
     {
-        public HTML_ParserDbContext() : base("HTML_ParserConnectionString")
+        public HTML_ParserDbContext() : base("PDbConnection")
         {
-
         }
         public DbSet<WebPage> WebPages { get; set; }
         public DbSet<CssFile> CssFiles { get; set; }

@@ -10,9 +10,12 @@ namespace HTML_Parser.Business.Parsing
     public interface IParsingStorage
     {
         void Initialize();
-        void SaveCssFiles(object state);
-        void SaveImageFiles(object state);
-        void SaveWebPages(object state);
+        void SaveCssFile(object state);
+        void SaveCssFiles(IEnumerable<CssFile> cssFiles);
+        void SaveImageFile(object state);
+        void SaveImageFiles(IEnumerable<ImageFile> imageFIles);
+        void SaveWebPage(object state);
+        void SaveWebPages(IEnumerable<WebPage> pages);
         WebPage GetWebPage(int id);
         WebPage GetWebPage(string url);
         IEnumerable<WebPage> GetWebPages();

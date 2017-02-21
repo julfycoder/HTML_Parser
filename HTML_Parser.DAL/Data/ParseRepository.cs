@@ -34,6 +34,11 @@ namespace HTML_Parser.DAL.Data
             }
             catch (Exception e) { Console.WriteLine(e.InnerException.Message); }
         }
+        public void AddEntities<T>(IEnumerable<T> entities) where T : Entity
+        {
+            context.Set<T>().AddRange(entities);
+            context.SaveChanges();
+        }
 
         public IEnumerable<CssFile> GetCssFiles()
         {
