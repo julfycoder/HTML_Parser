@@ -1,1 +1,1 @@
-CST|https://www.wikipedia.org
+CST|http://info.cern.ch

@@ -9,3 +9,9 @@
 2017-02-22 15:11:43.4694 INFO Saving site tree...
 2017-02-22 15:11:43.4694 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree6.txt
 2017-02-22 15:11:43.5163 INFO End of site tree building
+2017-02-22 17:13:07.3283 INFO Command!!!: CST|http://info.cern.ch
+2017-02-22 17:13:07.6070 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-22 17:13:09.5292 INFO Saving site tree...
+2017-02-22 17:13:09.5448 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( info.cern.ch )__SiteTree7.txt
+2017-02-22 17:13:09.6603 INFO End of site tree building
+2017-02-22 17:41:11.8652 INFO Stop

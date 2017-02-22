@@ -4,3 +4,72 @@
 2017-02-22 15:09:28.0041 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
 2017-02-22 15:09:28.0666 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
 2017-02-22 15:13:14.3942 INFO End of parsing
+2017-02-22 15:58:51.3018 INFO Start
+2017-02-22 15:58:58.4025 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 15:58:58.6870 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:00:20.5390 INFO Start
+2017-02-22 16:00:24.5813 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:00:24.8281 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:01:00.9543 INFO Start
+2017-02-22 16:01:12.0978 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:01:12.5821 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:02:02.5708 INFO Start
+2017-02-22 16:02:04.5925 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:02:05.0231 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:04:03.6253 INFO Start
+2017-02-22 16:04:14.8053 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:04:15.2742 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:06:30.9704 INFO Start
+2017-02-22 16:06:34.0166 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:06:34.0481 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:07:26.2206 INFO Start
+2017-02-22 16:07:30.2753 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:07:30.5280 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:10:11.5431 INFO Start
+2017-02-22 16:10:24.6975 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:10:24.9819 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:13:44.4227 INFO Start
+2017-02-22 16:13:53.5681 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:13:53.6468 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:29:58.3602 INFO Start
+2017-02-22 16:30:04.4218 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:30:04.4593 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:36:58.9296 INFO Start
+2017-02-22 16:37:11.1009 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:37:11.2164 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:38:12.8659 INFO Start
+2017-02-22 16:38:15.9072 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:38:16.5225 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:39:29.8141 INFO Start
+2017-02-22 16:39:38.9525 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:39:39.0155 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:45:16.5767 INFO Start
+2017-02-22 16:45:19.6170 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:45:20.2171 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:46:34.0916 INFO Start
+2017-02-22 16:46:37.1136 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:46:37.1448 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:55:01.4798 INFO Start
+2017-02-22 16:55:03.5079 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-22 16:55:03.9387 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-22 16:57:10.4845 INFO End of parsing
+2017-02-22 16:58:33.9360 INFO Command!!!: P|10|3|false|http://info.cern.ch
+2017-02-22 16:58:34.4873 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 3, foreign links = False
+2017-02-22 17:01:10.9479 INFO Start
+2017-02-22 17:01:14.9972 INFO Command!!!: P|10|3|false|http://info.cern.ch
+2017-02-22 17:01:15.1976 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 3, foreign links = False
+2017-02-22 17:06:45.7607 INFO Start
+2017-02-22 17:06:47.7901 INFO Command!!!: P|10|3|false|http://info.cern.ch
+2017-02-22 17:06:48.2218 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 3, foreign links = False
+2017-02-22 17:07:34.0172 INFO Start
+2017-02-22 17:07:39.0235 INFO Command!!!: P|10|3|false|http://info.cern.ch
+2017-02-22 17:07:39.4216 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 3, foreign links = False
+2017-02-22 17:09:00.9161 INFO Start
+2017-02-22 17:09:07.9937 INFO Command!!!: P|10|3|false|http://info.cern.ch
+2017-02-22 17:09:08.2563 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 3, foreign links = False
+2017-02-22 17:12:29.7078 INFO End of parsing
+2017-02-22 17:13:46.3560 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
+2017-02-22 17:13:46.5893 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
+2017-02-22 17:26:24.7895 INFO Start
+2017-02-22 17:26:29.7954 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
+2017-02-22 17:26:30.1959 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False

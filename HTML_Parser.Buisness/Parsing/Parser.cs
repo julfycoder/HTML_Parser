@@ -26,6 +26,10 @@ namespace HTML_Parser.Business.Parsing
         Dictionary<string, WebPage> storagePages = new Dictionary<string, WebPage>();
         List<WebSite> sites = new List<WebSite>();
 
+        List<WebPage> levelPages = new List<WebPage>();
+        List<ImageFile> levelImages = new List<ImageFile>();
+        List<CssFile> levelCssFiles = new List<CssFile>();
+
         bool useForeignLinks = true;
 
         Stopwatch watch = new Stopwatch();
@@ -81,12 +85,15 @@ namespace HTML_Parser.Business.Parsing
                     }
                 }
             }
-
-            SavePage(parsingPage,doc);
-            SaveImages(parsingPage.URL, docManager.GetImagesUrls(nodes));
-            SaveCssFiles(parsingPage.URL, docManager.GetCssFilesUrls(nodes));
+            if (!storagePages.ContainsKey(parsingPage.URL))
+            {
+                SavePage(parsingPage, doc);
+                SaveImages(parsingPage.URL, docManager.GetImagesUrls(nodes));
+                SaveCssFiles(parsingPage.URL, docManager.GetCssFilesUrls(nodes));
+            }
 
             Console.WriteLine(parsingPage.URL);
+            Console.WriteLine(GetTimeToLoad());
             Console.WriteLine();
 
         }
@@ -118,6 +125,9 @@ namespace HTML_Parser.Business.Parsing
                     }
                 }
                 threadsManager.WaitAllThreads();
+                SaveLevelPages();
+                SaveLevelCssFiles();
+                SaveLevelImages();
             }
         }
         void SaveWebSite(string url, string parentUrl)
@@ -142,28 +152,31 @@ namespace HTML_Parser.Business.Parsing
                 referralPageId = parentPage.Id;
                 if (!urlManager.IsForeignURL(url, parentPage.URL)) parentPageId = parentPage.Id;
             }
-            lock (sites)
+            return new WebPage
             {
-                return new WebPage
-                {
-                    URL = urlManager.GetCorrectURL(url, parentPage.URL),
-                    ParentPageId = parentPageId,
-                    ReferralPageId = referralPageId,
-                    WebSiteId = sites.First(s => urlManager.IsBelongTo(new Uri(s.URL), new Uri(urlManager.GetCorrectURL(url, parentPage.URL)))).Id
-                };
-            }
+                URL = urlManager.GetCorrectURL(url, parentPage.URL),
+                ParentPageId = parentPageId,
+                ReferralPageId = referralPageId,
+                WebSiteId = sites.First(s => urlManager.IsBelongTo(new Uri(s.URL), new Uri(urlManager.GetCorrectURL(url, parentPage.URL)))).Id
+            };
         }
-        void SavePage(WebPage currentPage,HtmlDocument doc)
+        void SavePage(WebPage currentPage, HtmlDocument doc)
         {
             lock (storagePages)
             {
                 if (storagePages.ContainsKey(currentPage.URL)) return;
             }
-            WebPage lastPage;
-            lock (parsingStorage)
+            int id = 0;
+            lock (levelPages)
             {
-                parsingStorage.SaveWebPage(new WebPage
+                lock (parsingStorage) if (parsingStorage.GetWebPages().Count() > 0)
+                    {
+                        id = levelPages.Count() + 1 + parsingStorage.GetWebPages().Last().Id;
+                    }
+
+                levelPages.Add(new WebPage
                 {
+                    Id = id,
                     URL = currentPage.URL,
                     TimeToLoad = int.Parse(GetTimeToLoad().ToString()),
                     HTML_Size = docManager.GetHtmlSize(doc),
@@ -171,43 +184,72 @@ namespace HTML_Parser.Business.Parsing
                     ReferralPageId = currentPage.ReferralPageId,
                     WebSiteId = currentPage.WebSiteId
                 });
-                lastPage = parsingStorage.GetWebPages().Last();
             }
-            lock (storagePages) if (!storagePages.ContainsKey(lastPage.URL)) storagePages.Add(lastPage.URL, lastPage);
         }
+
+        void SaveLevelPages()
+        {
+            parsingStorage.SaveWebPages(levelPages);
+            foreach (WebPage page in levelPages) storagePages.Add(page.URL, parsingStorage.GetWebPage(page.URL));
+            levelPages.Clear();
+        }
+
         void SaveImages(string pageUrl, List<string> imagesLinks)
         {
             WebPage page;
-            lock (parsingStorage) page = parsingStorage.GetWebPage(pageUrl);
+            lock (levelPages) page = levelPages.First(p => p.URL == pageUrl);
             foreach (string link in imagesLinks)
             {
-                lock (parsingStorage)
+                int id = 0;
+                lock (levelImages)
                 {
-                    parsingStorage.SaveImageFile(new ImageFile
+                    lock (parsingStorage)
+                        if (parsingStorage.GetImages().Count() > 0)
+                        {
+                            id = levelImages.Count() + 1 + parsingStorage.GetImages().Last().Id;
+                        }
+                    levelImages.Add(new ImageFile
                     {
+                        Id = id,
                         URL = link,
                         WebPageId = page.Id,
                         Name = link
                     });
                 }
             }
+        }
+        void SaveLevelImages()
+        {
+            parsingStorage.SaveImageFiles(levelImages);
+            levelImages.Clear();
         }
         void SaveCssFiles(string pageUrl, List<string> cssFiles)
         {
             WebPage page;
-            lock (parsingStorage) page = parsingStorage.GetWebPage(pageUrl);
+            lock (parsingStorage) page = levelPages.First(p => p.URL == pageUrl);
             foreach (string link in cssFiles)
             {
-                lock (parsingStorage)
+                lock (levelCssFiles)
                 {
-                    parsingStorage.SaveCssFile(new CssFile
+                    int id = 0;
+                    lock (parsingStorage) if (parsingStorage.GetCssFiles().Count() > 0)
+                        {
+                            id = levelCssFiles.Count() + 1 + parsingStorage.GetCssFiles().Last().Id;
+                        }
+                    levelImages.Add(new ImageFile
                     {
+                        Id = id,
                         URL = link,
                         WebPageId = page.Id,
                         Name = link
                     });
                 }
             }
+        }
+        void SaveLevelCssFiles()
+        {
+            parsingStorage.SaveCssFiles(levelCssFiles);
+            levelCssFiles.Clear();
         }
         WebPage GetParentPage(string startUrl, string currentUrl)//////////////////////////??????????
         {

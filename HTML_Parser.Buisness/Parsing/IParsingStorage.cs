@@ -23,5 +23,7 @@ namespace HTML_Parser.Business.Parsing
         WebSite GetWebSite(int id);
         WebSite GetWebSite(string url);
         void SaveWebSite(object state);
+        IEnumerable<ImageFile> GetImages();
+        IEnumerable<CssFile> GetCssFiles();
     }
 }

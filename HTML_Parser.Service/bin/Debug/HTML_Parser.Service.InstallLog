@@ -1203,3 +1203,25 @@ Affected parameters are:
    logtoconsole = 
    logfile = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.InstallLog
    assemblypath = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe
+Uninstalling assembly 'C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.InstallLog
+   assemblypath = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe
+Removing EventLog source HTML_Parser.
+Service HTML_Parser is being removed from the system...
+Service HTML_Parser was successfully removed from the system.
+Attempt to stop service HTML_Parser.
+Installing assembly 'C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.InstallLog
+   assemblypath = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe
+Installing service HTML_Parser...
+Service HTML_Parser has been successfully installed.
+Creating EventLog source HTML_Parser in log Application...
+Committing assembly 'C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.InstallLog
+   assemblypath = C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\HTML_Parser.Service.exe

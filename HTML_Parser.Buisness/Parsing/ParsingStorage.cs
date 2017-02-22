@@ -44,7 +44,8 @@ namespace HTML_Parser.Business.Parsing
         }
         public void SaveWebPages(IEnumerable<WebPage> pages)
         {
-            
+            lock (repository) repository.AddEntities(pages);
+            foreach (WebPage page in pages) dbPages.Add(repository.GetWebPage(page.URL));
         }
         public void SaveCssFile(object state)
         {
@@ -121,6 +122,15 @@ namespace HTML_Parser.Business.Parsing
                     dbSites.Add(repository.GetWebSites().Last());
                 }
             }
+        }
+
+        public IEnumerable<ImageFile> GetImages()
+        {
+            return repository.GetImageFiles();
+        }
+        public IEnumerable<CssFile> GetCssFiles()
+        {
+            return repository.GetCssFiles();
         }
     }
 }
