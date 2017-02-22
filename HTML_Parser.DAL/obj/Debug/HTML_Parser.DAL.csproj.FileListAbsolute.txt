@@ -16,3 +16,4 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\NLog.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\NLog.xml
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\bin\Debug\HTML_Parser.DAL.dll.config
+C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.DAL\obj\Debug\HTML_Parser.DAL.Migrations.WebSite.resources

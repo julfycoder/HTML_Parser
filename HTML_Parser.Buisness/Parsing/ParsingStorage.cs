@@ -16,6 +16,7 @@ namespace HTML_Parser.Business.Parsing
         List<WebPage> dbPages = new List<WebPage>();
         List<CssFile> dbCss = new List<CssFile>();
         List<ImageFile> dbImages = new List<ImageFile>();
+        List<WebSite> dbSites = new List<WebSite>();
 
         public ParsingStorage(IParseRepository parseRepository)
         {
@@ -27,7 +28,7 @@ namespace HTML_Parser.Business.Parsing
             dbPages = repository.GetWebPages().ToList();
             dbImages = repository.GetImageFiles().ToList();
             dbCss = repository.GetCssFiles().ToList();
-
+            dbSites = repository.GetWebSites().ToList();
         }
         public void SaveWebPage(object state)
         {
@@ -43,18 +44,7 @@ namespace HTML_Parser.Business.Parsing
         }
         public void SaveWebPages(IEnumerable<WebPage> pages)
         {
-            //lock (repository)
-            //{
-            //    foreach (WebPage page in pages)
-            //    {
-            //        if (dbPages != null && (!dbPages.Any() || dbPages.All(p => p.URL != page.URL)))
-            //        {
-            //            repository.AddEntity(page);
-            //            dbPages.Add(repository.GetWebPage(page.URL));
-            //        }
-            //    }
-            //}
-
+            
         }
         public void SaveCssFile(object state)
         {
@@ -103,6 +93,34 @@ namespace HTML_Parser.Business.Parsing
         public IEnumerable<WebPage> GetWebPages()
         {
             return dbPages;
+        }
+
+        public IEnumerable<WebSite> GetWebSites()
+        {
+            return dbSites;
+        }
+
+        public WebSite GetWebSite(int id)
+        {
+            return dbSites.First(s => s.Id == id);
+        }
+
+        public WebSite GetWebSite(string url)
+        {
+            return dbSites.First(s => s.URL == url);
+        }
+
+        public void SaveWebSite(object state)
+        {
+            WebSite site = (WebSite)state;
+            if (dbSites != null && (!dbSites.Any() || dbSites.All(p => p.URL != site.URL)))
+            {
+                lock (repository)
+                {
+                    repository.AddEntity(site);
+                    dbSites.Add(repository.GetWebSites().Last());
+                }
+            }
         }
     }
 }

@@ -1,1 +1,1 @@
-P|10|5|false|https://www.wikipedia.org
+P|10|1|false|https://www.wikipedia.org

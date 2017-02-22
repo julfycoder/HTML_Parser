@@ -29,13 +29,13 @@ namespace HTML_Parser.Business.Commands
         }
         public void Execute()
         {
-            try
-            {
+            //try
+            //{
                 logger.Info("Start to parse '{0}', with {1} threads, with depth = {2}, foreign links = {3}", url, workerThreadsCount, depth, useForeignLinks);
                 parser.Start(url, workerThreadsCount, depth, useForeignLinks);
                 logger.Info("End of parsing");
-            }
-            catch (Exception e) { logger.Error(e.Message); }
+            //}
+            //catch (Exception e) { logger.Error(e.Message); }
         }
     }
 }

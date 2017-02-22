@@ -19,5 +19,9 @@ namespace HTML_Parser.Business.Parsing
         WebPage GetWebPage(int id);
         WebPage GetWebPage(string url);
         IEnumerable<WebPage> GetWebPages();
+        IEnumerable<WebSite> GetWebSites();
+        WebSite GetWebSite(int id);
+        WebSite GetWebSite(string url);
+        void SaveWebSite(object state);
     }
 }

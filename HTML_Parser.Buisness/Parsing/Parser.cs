@@ -24,6 +24,7 @@ namespace HTML_Parser.Business.Parsing
         HashSet<string> visitedPages = new HashSet<string>();
         Dictionary<string, string> links = new Dictionary<string, string>();
         Dictionary<string, WebPage> storagePages = new Dictionary<string, WebPage>();
+        List<WebSite> sites = new List<WebSite>();
 
         bool useForeignLinks = true;
 
@@ -66,7 +67,8 @@ namespace HTML_Parser.Business.Parsing
             visitedPages.Add(parsingPage.URL);
             HtmlDocument doc = GetHtmlDocument(parsingPage.URL);
             List<HtmlNode> nodes = docManager.GetAllNodes(doc);
-            foreach (string link in docManager.GetLinks(nodes))
+            List<string> currentLinks = docManager.GetLinks(nodes);
+            foreach (string link in currentLinks)
             {
                 if (useForeignLinks || (!useForeignLinks && !urlManager.IsForeignURL(link, parsingPage.URL)))
                 {
@@ -80,7 +82,7 @@ namespace HTML_Parser.Business.Parsing
                 }
             }
 
-            SavePage(parsingPage);
+            SavePage(parsingPage,doc);
             SaveImages(parsingPage.URL, docManager.GetImagesUrls(nodes));
             SaveCssFiles(parsingPage.URL, docManager.GetCssFilesUrls(nodes));
 
@@ -97,7 +99,8 @@ namespace HTML_Parser.Business.Parsing
                 childsCount = links.Count;
                 depth--;
 
-                foreach (string link in links.Keys)
+                List<string> keys = new List<string>(links.Keys);
+                foreach (string link in keys)
                 {
                     WebPage parent = GetParentPage(url, link);
                     if ((!visitedPages.Contains(urlManager.GetCorrectURL(link, parent.URL)) && (depth > -2) &&
@@ -105,11 +108,29 @@ namespace HTML_Parser.Business.Parsing
                     {
                         if ((urlManager.GetCorrectURL(link, parent.URL) != parent.URL) || (visitedPages.Count == 0))
                         {
-                            threadsManager.QueueWorkItem(ParsePage, CreatePage(link, parent));
+                            Uri u;
+                            if (Uri.TryCreate(urlManager.GetCorrectURL(link, parent.URL), UriKind.RelativeOrAbsolute, out u))
+                            {
+                                SaveWebSite(urlManager.GetCorrectURL(link), parent.URL);
+                                threadsManager.QueueWorkItem(ParsePage, CreatePage(link, parent));
+                            }
                         }
                     }
                 }
                 threadsManager.WaitAllThreads();
+            }
+        }
+        void SaveWebSite(string url, string parentUrl)
+        {
+            if (!sites.Any(s => urlManager.IsBelongTo(new Uri(s.URL), new Uri(urlManager.GetCorrectURL(url, parentUrl)))))
+            {
+                WebSite site = new WebSite { URL = urlManager.GetHostWithScheme(urlManager.GetCorrectURL(url, parentUrl)) };
+                lock (parsingStorage)
+                {
+                    parsingStorage.SaveWebSite(site);
+                    site = parsingStorage.GetWebSite(urlManager.GetHostWithScheme(urlManager.GetCorrectURL(url, parentUrl)));
+                }
+                lock (sites) if (!sites.Any(s => s.Id == site.Id)) sites.Add(site);
             }
         }
         WebPage CreatePage(string url, WebPage parentPage)//////////////////////////////??????????????????????
@@ -121,14 +142,18 @@ namespace HTML_Parser.Business.Parsing
                 referralPageId = parentPage.Id;
                 if (!urlManager.IsForeignURL(url, parentPage.URL)) parentPageId = parentPage.Id;
             }
-            return new WebPage
+            lock (sites)
             {
-                URL = urlManager.GetCorrectURL(url, parentPage.URL),
-                ParentPageId = parentPageId,
-                ReferralPageId = referralPageId
-            };
+                return new WebPage
+                {
+                    URL = urlManager.GetCorrectURL(url, parentPage.URL),
+                    ParentPageId = parentPageId,
+                    ReferralPageId = referralPageId,
+                    WebSiteId = sites.First(s => urlManager.IsBelongTo(new Uri(s.URL), new Uri(urlManager.GetCorrectURL(url, parentPage.URL)))).Id
+                };
+            }
         }
-        void SavePage(WebPage currentPage)
+        void SavePage(WebPage currentPage,HtmlDocument doc)
         {
             lock (storagePages)
             {
@@ -141,9 +166,10 @@ namespace HTML_Parser.Business.Parsing
                 {
                     URL = currentPage.URL,
                     TimeToLoad = int.Parse(GetTimeToLoad().ToString()),
-                    HTML_Size = currentPage.HTML_Size,
+                    HTML_Size = docManager.GetHtmlSize(doc),
                     ParentPageId = currentPage.ParentPageId,
-                    ReferralPageId = currentPage.ReferralPageId
+                    ReferralPageId = currentPage.ReferralPageId,
+                    WebSiteId = currentPage.WebSiteId
                 });
                 lastPage = parsingStorage.GetWebPages().Last();
             }

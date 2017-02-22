@@ -12,6 +12,9 @@ namespace HTML_Parser.DAL.Data
         IEnumerable<WebPage> GetWebPages();
         WebPage GetWebPage(int id);
         WebPage GetWebPage(string url);
+        IEnumerable<WebSite> GetWebSites();
+        WebSite GetWebSite(string url);
+        WebSite GetWebSite(int id);
         IEnumerable<CssFile> GetCssFiles();
         IEnumerable<ImageFile> GetImageFiles();
 

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Entities\WebSite.cs" />
     <Compile Include="Data\IParsingCommandsRepository.cs" />
     <Compile Include="Data\ISiteTreeRepository.cs" />
     <Compile Include="Data\ParsingCommandsEventArgs.cs" />
@@ -76,6 +77,10 @@
     <Compile Include="Migrations\201702131400298_ReferralPageId.cs" />
     <Compile Include="Migrations\201702131400298_ReferralPageId.Designer.cs">
       <DependentUpon>201702131400298_ReferralPageId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220943014_WebSite.cs" />
+    <Compile Include="Migrations\201702220943014_WebSite.Designer.cs">
+      <DependentUpon>201702220943014_WebSite.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\ParseRepository.cs" />
@@ -111,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702131400298_ReferralPageId.resx">
       <DependentUpon>201702131400298_ReferralPageId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220943014_WebSite.resx">
+      <DependentUpon>201702220943014_WebSite.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

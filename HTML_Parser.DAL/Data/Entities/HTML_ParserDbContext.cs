@@ -16,5 +16,6 @@ namespace HTML_Parser.DAL.Data.Entities
         public DbSet<WebPage> WebPages { get; set; }
         public DbSet<CssFile> CssFiles { get; set; }
         public DbSet<ImageFile> ImageFiles { get; set; }
+        public DbSet<WebSite> WebSites { get; set; }
     }
 }

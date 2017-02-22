@@ -75,5 +75,22 @@ namespace HTML_Parser.DAL.Data
             context.Set<T>().Remove(entity);
             context.SaveChanges();
         }
+
+        public IEnumerable<WebSite> GetWebSites()
+        {
+            return context.WebSites;
+        }
+
+        public WebSite GetWebSite(string url)
+        {
+            if (context.WebSites.Any(s => s.URL == url)) return context.WebSites.First(s => s.URL == url);
+            return null;
+        }
+
+        public WebSite GetWebSite(int id)
+        {
+            if (context.WebSites.Any(s => s.Id == id)) return context.WebSites.First(s => s.Id == id);
+            return null;
+        }
     }
 }

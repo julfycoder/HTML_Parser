@@ -1,39 +1,11 @@
-2017-02-21 18:14:25.8825 INFO Command!!!: P|10|0|false|http://info.cern.ch
-2017-02-21 18:14:25.8982 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 0, foreign links = False
-2017-02-21 18:14:26.0141 INFO End of parsing
-2017-02-21 18:15:20.4323 INFO Command!!!: P|10|0|false|http://info.cern.ch
-2017-02-21 18:15:20.8552 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 0, foreign links = False
-2017-02-21 18:15:21.0003 INFO End of parsing
-2017-02-21 18:16:35.7610 INFO Stop
-2017-02-21 18:26:06.5182 INFO Start
-2017-02-21 18:26:13.6120 INFO Command!!!: P|10|0|false|http://info.cern.ch
-2017-02-21 18:26:13.8503 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 0, foreign links = False
-2017-02-21 18:26:32.8204 INFO End of parsing
-2017-02-21 18:45:25.3041 INFO Stop
-2017-02-21 18:46:11.7901 INFO Start
-2017-02-21 19:07:04.5497 INFO Command!!!: P|10|0|false|http://www.microsoft.com
-2017-02-21 19:07:04.5767 INFO Start to parse 'http://www.microsoft.com', with 10 threads, with depth = 0, foreign links = False
-2017-02-21 19:07:09.5108 INFO End of parsing
-2017-02-21 19:11:21.7174 INFO Command!!!: P|10|1|false|http://www.microsoft.com
-2017-02-21 19:11:21.7339 INFO Start to parse 'http://www.microsoft.com', with 10 threads, with depth = 1, foreign links = False
-2017-02-21 19:12:53.2910 INFO End of parsing
-2017-02-21 19:18:16.2006 INFO Command!!!: CST|https://www.wikipedia.org
-2017-02-21 19:18:16.3542 INFO Start to build site tree of 'https://www.wikipedia.org'
-2017-02-21 19:18:18.3174 INFO Saving site tree...
-2017-02-21 19:18:18.3419 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree2.txt
-2017-02-21 19:18:18.6582 INFO End of site tree building
-2017-02-21 19:19:26.2504 INFO Command!!!: CST|https://www.wikipedia.org
-2017-02-21 19:19:26.5126 INFO Start to build site tree of 'https://www.wikipedia.org'
-2017-02-21 19:19:26.5576 INFO Saving site tree...
-2017-02-21 19:19:26.5811 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree3.txt
-2017-02-21 19:19:26.8443 INFO End of site tree building
-2017-02-21 19:25:52.5311 INFO Command!!!: CST|https://www.wikipedia.org
-2017-02-21 19:25:52.9704 INFO Start to build site tree of 'https://www.wikipedia.org'
-2017-02-21 19:25:54.8352 INFO Saving site tree...
-2017-02-21 19:25:54.8735 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree4.txt
-2017-02-21 19:25:55.2617 INFO End of site tree building
-2017-02-21 19:33:11.8181 INFO Command!!!: CST|https://www.wikipedia.org
-2017-02-21 19:33:12.4121 INFO Start to build site tree of 'https://www.wikipedia.org'
-2017-02-21 19:33:14.2715 INFO Saving site tree...
-2017-02-21 19:33:14.4281 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree5.txt
-2017-02-21 19:33:15.0932 INFO End of site tree building
+2017-02-22 15:07:15.9625 INFO Start
+2017-02-22 15:08:51.0929 INFO Command!!!: CST|http://info.cern.ch
+2017-02-22 15:08:51.1936 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-22 15:08:55.0240 INFO Saving site tree...
+2017-02-22 15:08:55.0240 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( info.cern.ch )__SiteTree6.txt
+2017-02-22 15:08:55.0240 INFO End of site tree building
+2017-02-22 15:11:42.8678 INFO Command!!!: CST|https://www.wikipedia.org
+2017-02-22 15:11:43.4160 INFO Start to build site tree of 'https://www.wikipedia.org'
+2017-02-22 15:11:43.4694 INFO Saving site tree...
+2017-02-22 15:11:43.4694 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser.Service\bin\Debug\( www.wikipedia.org )__SiteTree6.txt
+2017-02-22 15:11:43.5163 INFO End of site tree building

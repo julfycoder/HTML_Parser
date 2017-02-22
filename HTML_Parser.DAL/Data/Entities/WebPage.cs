@@ -15,5 +15,8 @@ namespace HTML_Parser.DAL.Data.Entities
         public int? ParentPageId { get; set; }
         public int? ReferralPageId { get; set; }
         public WebPage Page { get; set; }
+        [ForeignKey("Site")]
+        public int WebSiteId { get; set; }
+        public WebSite Site { get; set; }
     }
 }
