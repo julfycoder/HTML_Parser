@@ -8,13 +8,16 @@ namespace HTML_Parser.Business.Web
 {
     public class URLManager : IURLManager
     {
-        public string GetCorrectURL(string currentUrl)
+        public string GetCorrectURL(string currentUrl)                                  //Not tested
         {
             if (currentUrl.Length > 1 && currentUrl.Substring(0, 2) == "//") currentUrl = "https:" + currentUrl;
             return currentUrl;
         }
-        public string GetCorrectURL(string currentUrl, string ParentUrl)
+        public string GetCorrectURL(string currentUrl, string ParentUrl)                //Not tested
         {
+            if (currentUrl.Length >= 5 && currentUrl.Contains("about"))
+            {
+            }
             if (currentUrl.Count() > 1 && currentUrl.Substring(0, 2) == "//")
             {
                 return "https:" + currentUrl;                                                                 //Starts on '//'
@@ -30,11 +33,18 @@ namespace HTML_Parser.Business.Web
                     (currentUrl.Count() > 5 && currentUrl.Substring(currentUrl.Count() - 5, 5).ToLower() == ".html" && !IsAbsoluteURL(currentUrl)))//Ends on '.html'
             {
                 return ParentUrl + "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];
-
+            }
+            else if (currentUrl.Count() > 1 && currentUrl[0] == '/' && currentUrl.Split('/')[0] == ParentUrl.Split('/').Last())
+            {
+                if (ParentUrl.Last() == '/' && currentUrl.First() == '/')
+                {
+                    return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length - 1) + currentUrl;
+                }
+                return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length) + currentUrl;
             }
             else if (currentUrl.Count() > 1 && currentUrl[0] == '/') //Starts on '/'
             {
-                return ParentUrl + currentUrl.Substring(1, currentUrl.Length - 1);
+                return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length-1) + currentUrl;
             }
             else if ((currentUrl.Count() < 7) || ((currentUrl.Count() >= 7 && currentUrl.Substring(0, 7) != "http://")
                 && (currentUrl.Count() >= 8 && currentUrl.Substring(0, 8) != "https://")))
@@ -45,16 +55,15 @@ namespace HTML_Parser.Business.Web
         }
         public bool IsAbsoluteURL(string urlString)
         {
-            try
+            Uri result;
+            if (Uri.TryCreate(urlString, UriKind.RelativeOrAbsolute, out result))
             {
-                Uri url = new Uri(urlString);
-                return url.IsAbsoluteUri;
+                return result.IsAbsoluteUri;
             }
-            catch (Exception e) { return false; }
+            return false;
         }
-        public bool IsBelongTo(Uri uri, Uri childUri)
+        public bool IsBelongTo(Uri uri, Uri childUri)                       //Not tested
         {
-            if (childUri.AbsoluteUri.Length < uri.AbsoluteUri.Length) return false;
             if (childUri.Host == uri.Host) return true;
             if (childUri.Scheme != null && childUri.Scheme != "")
             {
@@ -83,17 +92,6 @@ namespace HTML_Parser.Business.Web
             catch (Exception e) { childUri = new Uri(parentUrl); }
             return (((url.Count() >= 7 && url.Substring(0, 7) == "http://") || (url.Count() >= 8 && url.Substring(0, 8) == "https://")) &&
                 (!IsBelongTo(parentUri, childUri)));
-        }
-        public bool IsDomain(string url)
-        {
-            Uri uri;
-            try
-            {
-                uri = new Uri(url);
-            }
-            catch (Exception e) { uri = new Uri(GetCorrectURL(url)); }
-            bool isDomain = (uri.AbsolutePath == "/");
-            return isDomain;
         }
         public string GetHostWithScheme(string url)
         {

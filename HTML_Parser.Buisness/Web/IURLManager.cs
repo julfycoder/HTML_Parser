@@ -13,7 +13,6 @@ namespace HTML_Parser.Business.Web
         bool IsAbsoluteURL(string urlString);
         bool IsBelongTo(Uri uri, Uri childUri);
         bool IsForeignURL(string url, string parentUrl);
-        bool IsDomain(string url);
         string GetHostWithScheme(string url);
     }
 }

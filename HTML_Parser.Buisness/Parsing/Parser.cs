@@ -27,8 +27,12 @@ namespace HTML_Parser.Business.Parsing
         List<WebSite> sites = new List<WebSite>();
 
         List<WebPage> levelPages = new List<WebPage>();
-        List<ImageFile> levelImages = new List<ImageFile>();
-        List<CssFile> levelCssFiles = new List<CssFile>();
+        //List<ImageFile> levelImages = new List<ImageFile>();
+        //List<CssFile> levelCssFiles = new List<CssFile>();
+        //Dictionary<string, ImageFile> levelImages = new Dictionary<string, ImageFile>();
+        //Dictionary<string, CssFile> levelCssFiles = new Dictionary<string, CssFile>();
+        Dictionary<ImageFile, string> levelImages = new Dictionary<ImageFile, string>();
+        Dictionary<CssFile, string> levelCssFiles = new Dictionary<CssFile, string>();
 
         bool useForeignLinks = true;
 
@@ -74,7 +78,7 @@ namespace HTML_Parser.Business.Parsing
             List<string> currentLinks = docManager.GetLinks(nodes);
             foreach (string link in currentLinks)
             {
-                if (useForeignLinks || (!useForeignLinks && !urlManager.IsForeignURL(link, parsingPage.URL)))
+                if (useForeignLinks || (!useForeignLinks && !urlManager.IsForeignURL(urlManager.GetCorrectURL(link,parsingPage.URL), parsingPage.URL)))
                 {
                     lock (links)
                     {
@@ -123,6 +127,13 @@ namespace HTML_Parser.Business.Parsing
                             }
                         }
                     }
+                    threadsManager.WaitAllThreads();
+                    if (levelPages.Count >= 5)
+                    {
+                        SaveLevelPages();
+                        SaveLevelCssFiles();
+                        SaveLevelImages();
+                    }
                 }
                 threadsManager.WaitAllThreads();
                 SaveLevelPages();
@@ -166,12 +177,13 @@ namespace HTML_Parser.Business.Parsing
             {
                 if (storagePages.ContainsKey(currentPage.URL)) return;
             }
-            int id = 0;
+            int id = levelPages.Count() + 1;
             lock (levelPages)
             {
-                lock (parsingStorage) if (parsingStorage.GetWebPages().Count() > 0)
+                lock (parsingStorage)
+                    if (parsingStorage.GetWebPages().Count() > 0)
                     {
-                        id = levelPages.Count() + 1 + parsingStorage.GetWebPages().Last().Id;
+                        id += parsingStorage.GetWebPages().Last().Id;
                     }
 
                 levelPages.Add(new WebPage
@@ -189,66 +201,65 @@ namespace HTML_Parser.Business.Parsing
 
         void SaveLevelPages()
         {
-            parsingStorage.SaveWebPages(levelPages);
-            foreach (WebPage page in levelPages) storagePages.Add(page.URL, parsingStorage.GetWebPage(page.URL));
-            levelPages.Clear();
+            lock (levelPages)
+            {
+                parsingStorage.SaveWebPages(levelPages);
+                foreach (WebPage page in levelPages) storagePages.Add(page.URL, parsingStorage.GetWebPage(page.URL));
+                levelPages.Clear();
+            }
         }
 
         void SaveImages(string pageUrl, List<string> imagesLinks)
         {
-            WebPage page;
-            lock (levelPages) page = levelPages.First(p => p.URL == pageUrl);
             foreach (string link in imagesLinks)
             {
-                int id = 0;
+                int id = levelImages.Count() + 1;
                 lock (levelImages)
                 {
                     lock (parsingStorage)
                         if (parsingStorage.GetImages().Count() > 0)
                         {
-                            id = levelImages.Count() + 1 + parsingStorage.GetImages().Last().Id;
+                            id += parsingStorage.GetImages().Last().Id;
                         }
                     levelImages.Add(new ImageFile
                     {
                         Id = id,
                         URL = link,
-                        WebPageId = page.Id,
                         Name = link
-                    });
+                    }, pageUrl);
                 }
             }
         }
         void SaveLevelImages()
         {
-            parsingStorage.SaveImageFiles(levelImages);
+            foreach (ImageFile key in levelImages.Keys) lock(levelImages)key.WebPageId = storagePages[levelImages[key]].Id;
+            parsingStorage.SaveImageFiles(levelImages.Keys);
             levelImages.Clear();
         }
         void SaveCssFiles(string pageUrl, List<string> cssFiles)
         {
-            WebPage page;
-            lock (parsingStorage) page = levelPages.First(p => p.URL == pageUrl);
             foreach (string link in cssFiles)
             {
                 lock (levelCssFiles)
                 {
-                    int id = 0;
+                    int id = levelCssFiles.Count() + 1;
                     lock (parsingStorage) if (parsingStorage.GetCssFiles().Count() > 0)
                         {
-                            id = levelCssFiles.Count() + 1 + parsingStorage.GetCssFiles().Last().Id;
+                            id += parsingStorage.GetCssFiles().Last().Id;
                         }
                     levelImages.Add(new ImageFile
                     {
                         Id = id,
                         URL = link,
-                        WebPageId = page.Id,
                         Name = link
-                    });
+                    }, pageUrl);
                 }
             }
         }
         void SaveLevelCssFiles()
         {
-            parsingStorage.SaveCssFiles(levelCssFiles);
+            foreach (CssFile key in levelCssFiles.Keys) lock(levelCssFiles)key.WebPageId = storagePages[levelCssFiles[key]].Id;
+            parsingStorage.SaveCssFiles(levelCssFiles.Keys);
             levelCssFiles.Clear();
         }
         WebPage GetParentPage(string startUrl, string currentUrl)//////////////////////////??????????
