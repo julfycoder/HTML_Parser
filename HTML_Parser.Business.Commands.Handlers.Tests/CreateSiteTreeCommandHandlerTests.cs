@@ -16,5 +16,13 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
 
             Assert.IsInstanceOfType(cst.HandleCommand(new string[] { "CST", "https://www.wikipedia.org" }), typeof(CreateSiteTreeCommand));
         }
+        [TestMethod]
+        public void HandleCommand_On_UnknownCommand_ReturnsNull()
+        {
+            var mock = new Mock<ISiteTreeBuilder>();
+            CreateSiteTreeCommandHandler p = new CreateSiteTreeCommandHandler(mock.Object);
+
+            Assert.IsNull(p.HandleCommand(new string[] { "Unknown" }));
+        }
     }
 }

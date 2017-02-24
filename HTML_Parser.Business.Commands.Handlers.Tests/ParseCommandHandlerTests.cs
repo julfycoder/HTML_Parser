@@ -18,6 +18,13 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
 
             Assert.IsInstanceOfType(p.HandleCommand(new string[] { "P","10","1","false","https://www.wikipedia.org" }), typeof(ParseCommand));
         }
-        
+        [TestMethod]
+        public void HandleCommand_On_UnknownCommand_ReturnsNull()
+        {
+            var mock = new Mock<IParser>();
+            ParseCommandHandler p = new ParseCommandHandler(mock.Object);
+
+            Assert.IsNull(p.HandleCommand(new string[] { "Unknown" }));
+        }
     }
 }

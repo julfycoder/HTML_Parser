@@ -23,10 +23,6 @@ namespace HTML_Parser.Service
 
             InitializeComponent();
         }
-        //public void OnDebug()
-        //{
-        //    OnStart(null);
-        //}
         protected override void OnStart(string[] args)
         {
             manager.Start();

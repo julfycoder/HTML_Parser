@@ -147,7 +147,7 @@ namespace HTML_Parser.Business.Parsing
                     parsingStorage.SaveWebSite(site);
                     site = parsingStorage.GetWebSite(urlManager.GetHostWithScheme(urlManager.GetCorrectURL(url, parentUrl)));
                 }
-                lock (sites) if (!sites.Any(s => s.Id == site.Id)) sites.Add(site);
+                lock (sites) if (sites.All(s => s.Id != site.Id)) sites.Add(site);
             }
         }
         WebPage CreatePage(string url, WebPage parentPage)//////////////////////////////??????????????????????
@@ -239,7 +239,7 @@ namespace HTML_Parser.Business.Parsing
                 lock (currentPagesCssFiles)
                 {
                     int id = currentPagesCssFiles.Count() + 1;
-                    lock (parsingStorage) if (parsingStorage.GetCssFiles().Count() > 0)
+                    lock (parsingStorage) if (parsingStorage.GetCssFiles().Any())
                         {
                             id += parsingStorage.GetCssFiles().Last().Id;
                         }
@@ -267,7 +267,10 @@ namespace HTML_Parser.Business.Parsing
                 if (links[startUrl] != null && storagePages[links[startUrl]] != null)
                     return storagePages[links[startUrl]];
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                // ignored
+            }
             return new WebPage { URL = startUrl };
         }
 

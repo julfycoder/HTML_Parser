@@ -13,43 +13,40 @@ namespace HTML_Parser.Business.Web
             if (currentUrl.Length > 1 && currentUrl.Substring(0, 2) == "//") currentUrl = "https:" + currentUrl;
             return currentUrl;
         }
-        public string GetCorrectURL(string currentUrl, string ParentUrl)                //Not tested
+        public string GetCorrectURL(string currentUrl, string parentUrl)                //Not tested
         {
-            if (currentUrl.Length >= 5 && currentUrl.Contains("about"))
-            {
-            }
             if (currentUrl.Count() > 1 && currentUrl.Substring(0, 2) == "//")
             {
                 return "https:" + currentUrl;                                                                 //Starts on '//'
             }
             else if (currentUrl.Count() > 5 && currentUrl.Substring(currentUrl.Count() - 5, 5).ToLower() == ".html" &&
-               ParentUrl.Substring(ParentUrl.Count() - 5, 5).ToLower() == ".html")
+               parentUrl.Substring(parentUrl.Count() - 5, 5).ToLower() == ".html")
             {
-                return ParentUrl.Substring(0, (ParentUrl.Length - ParentUrl.Split('/').Last().Length - 1)) +
+                return parentUrl.Substring(0, (parentUrl.Length - parentUrl.Split('/').Last().Length - 1)) +
                     "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];            //Ends on '.html'
             }
             else if ((currentUrl.Length == 1 && currentUrl[0] == '/') ||                                //Single '/'
                     (currentUrl.Count() > 2 && (currentUrl.Substring(0, 2) == ".." || currentUrl.Substring(0, 1) == ".")) ||//Starts on '..' 
                     (currentUrl.Count() > 5 && currentUrl.Substring(currentUrl.Count() - 5, 5).ToLower() == ".html" && !IsAbsoluteURL(currentUrl)))//Ends on '.html'
             {
-                return ParentUrl + "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];
+                return parentUrl + "/" + currentUrl.Split('/')[currentUrl.Split('/').Count() - 1];
             }
-            else if (currentUrl.Count() > 1 && currentUrl[0] == '/' && currentUrl.Split('/')[0] == ParentUrl.Split('/').Last())
+            else if (currentUrl.Count() > 1 && currentUrl[0] == '/' && currentUrl.Split('/')[0] == parentUrl.Split('/').Last())
             {
-                if (ParentUrl.Last() == '/' && currentUrl.First() == '/')
+                if (parentUrl.Last() == '/' && currentUrl.First() == '/')
                 {
-                    return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length - 1) + currentUrl;
+                    return parentUrl.Substring(0, parentUrl.Length - parentUrl.Split('/').Last().Length - 1) + currentUrl;
                 }
-                return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length) + currentUrl;
+                return parentUrl.Substring(0, parentUrl.Length - parentUrl.Split('/').Last().Length) + currentUrl;
             }
             else if (currentUrl.Count() > 1 && currentUrl[0] == '/') //Starts on '/'
             {
-                return ParentUrl.Substring(0, ParentUrl.Length - ParentUrl.Split('/').Last().Length-1) + currentUrl;
+                return parentUrl.Substring(0, parentUrl.Length - parentUrl.Split('/').Last().Length-1) + currentUrl;
             }
             else if ((currentUrl.Count() < 7) || ((currentUrl.Count() >= 7 && currentUrl.Substring(0, 7) != "http://")
                 && (currentUrl.Count() >= 8 && currentUrl.Substring(0, 8) != "https://")))
             {
-                return ParentUrl + "/" + currentUrl;                                                          //Starts on 'http://' or 'https://'
+                return parentUrl + "/" + currentUrl;                                                          //Starts on 'http://' or 'https://'
             }
             return currentUrl;
         }
@@ -65,7 +62,7 @@ namespace HTML_Parser.Business.Web
         public bool IsBelongTo(Uri uri, Uri childUri)                       //Not tested
         {
             if (childUri.Host == uri.Host) return true;
-            if (childUri.Scheme != null && childUri.Scheme != "")
+            if (childUri.Scheme != "")
             {
                 string[] uriHostFragments = uri.Host.Split('.');
                 string[] childHostFragments = childUri.Host.Split('.');
@@ -89,7 +86,7 @@ namespace HTML_Parser.Business.Web
             {
                 childUri = new Uri(GetCorrectURL(url, parentUrl));
             }
-            catch (Exception e) { childUri = new Uri(parentUrl); }
+            catch (Exception) { childUri = new Uri(parentUrl); }
             return (((url.Count() >= 7 && url.Substring(0, 7) == "http://") || (url.Count() >= 8 && url.Substring(0, 8) == "https://")) &&
                 (!IsBelongTo(parentUri, childUri)));
         }

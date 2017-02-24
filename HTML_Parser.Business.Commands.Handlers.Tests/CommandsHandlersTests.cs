@@ -23,6 +23,13 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
 
             Assert.IsInstanceOfType(command, typeof(CreateSiteTreeCommand));
         }
+        [TestMethod]
+        public void HandleCommand_On_UnknownCommand_ReturnsNull()
+        {
+            ICommand command = HandleCommandCall(new string[] { "Unknown" });
+
+            Assert.IsNull(command);
+        }
 
         ICommand HandleCommandCall(string[] commandSegments)
         {
@@ -36,5 +43,6 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
 
             return p.HandleCommand(commandSegments);
         }
+
     }
 }

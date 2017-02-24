@@ -11,8 +11,7 @@ namespace HTML_Parser.DAL
     {
         public List<string> CreateSiteTree(WebPage root, List<WebPage> webPages)
         {
-            List<string> siteTree = new List<string>();
-            siteTree.Add(root.URL + "\r\n");
+            List<string> siteTree = new List<string> {root.URL + "\r\n"};
 
             List<WebPage> children = new List<WebPage>();
             foreach (WebPage page in webPages)
