@@ -11,13 +11,16 @@ namespace HTML_Parser.DAL.Data
 {
     public class ParseRepository : IParseRepository
     {
-        HTML_ParserDbContext context = new HTML_ParserDbContext();
+
         public void AddEntity<T>(T entity) where T : Entity
         {
             try
             {
-                context.Set<T>().Add(entity);
-                context.SaveChanges();
+                using (var context = new HTML_ParserDbContext())
+                {
+                    context.Set<T>().Add(entity);
+                    context.SaveChanges();
+                }
             }
             catch (DbEntityValidationException e)
             {
@@ -36,61 +39,91 @@ namespace HTML_Parser.DAL.Data
         }
         public void AddEntities<T>(IEnumerable<T> entities) where T : Entity
         {
-            context.Set<T>().AddRange(entities);
-            context.SaveChanges();
+            using (var context = new HTML_ParserDbContext())
+            {
+                context.Set<T>().AddRange(entities);
+                context.SaveChanges();
+            }
         }
 
         public IEnumerable<CssFile> GetCssFiles()
         {
-            return context.CssFiles;
+            using (var context = new HTML_ParserDbContext())
+            {
+                return context.CssFiles;
+            }
         }
 
         public IEnumerable<WebPage> GetWebPages()
         {
-            return context.WebPages;
+            using (var context = new HTML_ParserDbContext())
+            {
+                return context.WebPages;
+            }
         }
         public WebPage GetWebPage(int id)
         {
-            return context.WebPages.First(p => p.Id == id);
+            using (var context = new HTML_ParserDbContext())
+            {
+                return context.WebPages.First(p => p.Id == id);
+            }
         }
         public WebPage GetWebPage(string url)
         {
-            try
+            using (var context = new HTML_ParserDbContext())
             {
-                return context.WebPages.First(p => p.URL == url);
-            }
-            catch (Exception)
-            {
-                return null;
+                try
+                {
+                    return context.WebPages.First(p => p.URL == url);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
         public IEnumerable<ImageFile> GetImageFiles()
         {
-            return context.ImageFiles;
+            using (var context = new HTML_ParserDbContext())
+            {
+                return context.ImageFiles;
+            }
         }
 
         public void RemoveEntity<T>(T entity) where T : Entity
         {
-            context.Set<T>().Remove(entity);
-            context.SaveChanges();
+            using (var context = new HTML_ParserDbContext())
+            {
+                context.Set<T>().Remove(entity);
+                context.SaveChanges();
+            }
         }
 
         public IEnumerable<WebSite> GetWebSites()
         {
-            return context.WebSites;
+            using (var context = new HTML_ParserDbContext())
+            {
+                return context.WebSites;
+            }
         }
 
         public WebSite GetWebSite(string url)
         {
-            if (context.WebSites.Any(s => s.URL == url)) return context.WebSites.First(s => s.URL == url);
-            return null;
+            using (var context = new HTML_ParserDbContext())
+            {
+                if (context.WebSites.Any(s => s.URL == url)) return context.WebSites.First(s => s.URL == url);
+                return null;
+            }
         }
 
         public WebSite GetWebSite(int id)
         {
-            if (context.WebSites.Any(s => s.Id == id)) return context.WebSites.First(s => s.Id == id);
-            return null;
+            using (var context = new HTML_ParserDbContext())
+            {
+                if (context.WebSites.Any(s => s.Id == id)) return context.WebSites.First(s => s.Id == id);
+                return null;
+            }
         }
     }
 }

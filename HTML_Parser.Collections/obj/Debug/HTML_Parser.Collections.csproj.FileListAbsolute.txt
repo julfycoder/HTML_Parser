@@ -10,3 +10,15 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.config
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.config
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\HTML_Parser.Collections.dll
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\HTML_Parser.Collections.pdb
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\HTML_Parser.DAL.dll
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\EntityFramework.dll
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.dll
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\HTML_Parser.DAL.pdb
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\EntityFramework.xml
+J:\HTML_Parser\HTML_Parser.Collections\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Collections\obj\Debug\HTML_Parser.Collections.csprojResolveAssemblyReference.cache
+J:\HTML_Parser\HTML_Parser.Collections\obj\Debug\HTML_Parser.Collections.dll
+J:\HTML_Parser\HTML_Parser.Collections\obj\Debug\HTML_Parser.Collections.pdb
