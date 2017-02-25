@@ -62,25 +62,24 @@ namespace HTML_Parser.Business.Web
         public bool IsBelongTo(Uri uri, Uri childUri)                       //Not tested
         {
             if (childUri.Host == uri.Host) return true;
-            if (childUri.Scheme != "")
-            {
-                string[] uriHostFragments = uri.Host.Split('.');
-                string[] childHostFragments = childUri.Host.Split('.');
+            if (childUri.Scheme == "") return false;
 
-                int coincidence = 0;
-                for (int i = 0; i < uriHostFragments.Length; i++)
-                {
-                    if (childHostFragments.Any(c => c == uriHostFragments[i])) coincidence++;
-                    else if (coincidence > 0) coincidence--;
-                    if (coincidence > 1) return true;
-                }
+            var uriHostFragments = uri.Host.Split('.');
+            var childHostFragments = childUri.Host.Split('.');
+
+            var coincidence = 0;
+            foreach (var fragment in uriHostFragments)
+            {
+                if (childHostFragments.Any(c => c == fragment)) coincidence++;
+                else if (coincidence > 0) coincidence--;
+                if (coincidence > 1) return true;
             }
             return false;
         }
         public bool IsForeignURL(string url, string parentUrl)
         {
             url = GetCorrectURL(url);
-            Uri parentUri = new Uri(parentUrl);
+            var parentUri = new Uri(parentUrl);
             Uri childUri;
             try
             {
@@ -92,7 +91,7 @@ namespace HTML_Parser.Business.Web
         }
         public string GetHostWithScheme(string url)
         {
-            Uri uri = new Uri(url);
+            var uri = new Uri(url);
             return uri.Scheme + "://" + uri.Host;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.ServiceProcess;
 using HTML_Parser.Business.Commands;
+using HTML_Parser.Business.Commands.Handlers;
 using StructureMap;
 using NLog;
 
@@ -18,6 +19,9 @@ namespace HTML_Parser.Service
                     s.WithDefaultConventions();
                     s.AssembliesFromApplicationBaseDirectory();
                 });
+                x.For<IHandlersChainFactory>().Use<HTML_ParserHandlersChainFactory>();
+                x.For<CommandHandler>().Use<ParseCommandHandler>();
+                x.For<CommandHandler>().Use<CreateSiteTreeCommandHandler>();
             });
             manager = c.GetInstance<ICommandsManager>();
 

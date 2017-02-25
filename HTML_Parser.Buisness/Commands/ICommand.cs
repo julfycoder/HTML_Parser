@@ -8,7 +8,6 @@ namespace HTML_Parser.Business.Commands
 {
     public interface ICommand
     {
-        void Initialize(CommandInfoBase commandInfo);
         void Execute();
     }
 }

@@ -14,3 +14,19 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.config
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.config
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.Business.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.Business.pdb
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.DAL.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\StructureMap.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\EntityFramework.dll
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HTML_Parser.DAL.pdb
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.pdb
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\HtmlAgilityPack.xml
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Buisness\bin\Debug\EntityFramework.xml
+J:\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Business.csprojResolveAssemblyReference.cache
+J:\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Business.dll
+J:\HTML_Parser\HTML_Parser.Buisness\obj\Debug\HTML_Parser.Business.pdb

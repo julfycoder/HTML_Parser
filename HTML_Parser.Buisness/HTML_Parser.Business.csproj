@@ -58,6 +58,8 @@
     <Compile Include="Commands\CreateSiteTreeCommandInfo.cs" />
     <Compile Include="Commands\Handlers\CommandHandler.cs" />
     <Compile Include="Commands\Handlers\CreateSiteTreeCommandHandler.cs" />
+    <Compile Include="Commands\Handlers\IHandlersChainFactory.cs" />
+    <Compile Include="Commands\Handlers\HTML_ParserHandlersChainFactory.cs" />
     <Compile Include="Commands\Handlers\ParseCommandHandler.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\CommandInfoBase.cs" />

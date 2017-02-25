@@ -19,3 +19,24 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.csprojResolveAssemblyReference.cache
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.pdb
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\NLog.config
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.Business.Commands.Handlers.Tests.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.Business.Commands.Handlers.Tests.pdb
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\Castle.Core.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.Business.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\Moq.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HtmlAgilityPack.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.DAL.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\NLog.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\EntityFramework.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.Business.pdb
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\Castle.Core.xml
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\Moq.xml
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HtmlAgilityPack.pdb
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HtmlAgilityPack.xml
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\HTML_Parser.DAL.pdb
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\bin\Debug\EntityFramework.xml
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.csprojResolveAssemblyReference.cache
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.dll
+J:\HTML_Parser\HTML_Parser.Business.Commands.Handlers.Tests\obj\Debug\HTML_Parser.Business.Commands.Handlers.Tests.pdb

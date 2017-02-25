@@ -12,17 +12,19 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
         public void CreateSiteTreeCommandHandler_HandleCommand_On_CST_ReturnsCreateSiteTreeCommand()
         {
             var mock = new Mock<ISiteTreeBuilder>();
-            CreateSiteTreeCommandHandler cst = new CreateSiteTreeCommandHandler(mock.Object);
+            var cst = new CreateSiteTreeCommandHandler(mock.Object);
 
-            Assert.IsInstanceOfType(cst.HandleCommand(new string[] { "CST", "https://www.wikipedia.org" }), typeof(CreateSiteTreeCommand));
+            Assert.IsInstanceOfType(cst.HandleCommand(new[] {"CST", "https://www.wikipedia.org"}),
+                typeof(CreateSiteTreeCommand));
         }
+
         [TestMethod]
         public void HandleCommand_On_UnknownCommand_ReturnsNull()
         {
             var mock = new Mock<ISiteTreeBuilder>();
-            CreateSiteTreeCommandHandler p = new CreateSiteTreeCommandHandler(mock.Object);
+            var p = new CreateSiteTreeCommandHandler(mock.Object);
 
-            Assert.IsNull(p.HandleCommand(new string[] { "Unknown" }));
+            Assert.IsNull(p.HandleCommand(new string[] {"Unknown"}));
         }
     }
 }

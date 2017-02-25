@@ -16,3 +16,21 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.csprojResolveAssemblyReference.cache
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.pdb
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\NLog.config
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.Business.Web.Tests.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.Business.Web.Tests.pdb
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.Business.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HtmlAgilityPack.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.DAL.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\NLog.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\EntityFramework.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.Business.pdb
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HtmlAgilityPack.pdb
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HtmlAgilityPack.xml
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\HTML_Parser.DAL.pdb
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\bin\Debug\EntityFramework.xml
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.csprojResolveAssemblyReference.cache
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.dll
+J:\HTML_Parser\HTML_Parser.Business.Web.Tests\obj\Debug\HTML_Parser.Business.Web.Tests.pdb

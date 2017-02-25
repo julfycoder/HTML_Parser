@@ -4,32 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NLog;
 
 namespace HTML_Parser.Business.Commands.Handlers
 {
     public class CreateSiteTreeCommandHandler : CommandHandler
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        ISiteTreeBuilder builder;
+        readonly ISiteTreeBuilder _builder;
+
         public CreateSiteTreeCommandHandler(ISiteTreeBuilder builder)
         {
-            this.builder = builder;
+            _builder = builder;
+            _commandKey = "CST";
         }
-        public override ICommand HandleCommand(string[] commandSegments)
+
+        protected override ICommand HandleConcreteCommand(string[] commandSegments)
         {
-            if (commandSegments[0] == "CST")
-            {
-                CreateSiteTreeCommand command = new CreateSiteTreeCommand(builder);
-                command.Initialize(new CreateSiteTreeCommandInfo
+            return new CreateSiteTreeCommand(_builder,
+                new CreateSiteTreeCommandInfo
                 {
                     Url = commandSegments[1]
                 });
-                return command;
-            }
-            if (successor != null) return successor.HandleCommand(commandSegments);
-            logger.Info("Unknown command");
-            return null;
         }
     }
 }

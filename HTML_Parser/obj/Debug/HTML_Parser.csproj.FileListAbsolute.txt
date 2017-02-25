@@ -19,3 +19,24 @@ C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser\
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\NLog.config
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\NLog.dll
 C:\Users\bbesedin\documents\visual studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\NLog.xml
+j:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.exe.config
+j:\HTML_Parser\HTML_Parser\obj\Debug\HTML_Parser.exe
+j:\HTML_Parser\HTML_Parser\obj\Debug\HTML_Parser.pdb
+J:\HTML_Parser\HTML_Parser\bin\Debug\NLog.config
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.exe
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.pdb
+J:\HTML_Parser\HTML_Parser\bin\Debug\EntityFramework.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\EntityFramework.SqlServer.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\HtmlAgilityPack.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.Business.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.DAL.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\StructureMap.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\NLog.dll
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.Business.pdb
+J:\HTML_Parser\HTML_Parser\bin\Debug\HTML_Parser.DAL.pdb
+J:\HTML_Parser\HTML_Parser\bin\Debug\EntityFramework.xml
+J:\HTML_Parser\HTML_Parser\bin\Debug\EntityFramework.SqlServer.xml
+J:\HTML_Parser\HTML_Parser\bin\Debug\HtmlAgilityPack.pdb
+J:\HTML_Parser\HTML_Parser\bin\Debug\HtmlAgilityPack.xml
+J:\HTML_Parser\HTML_Parser\bin\Debug\NLog.xml
+J:\HTML_Parser\HTML_Parser\obj\Debug\HTML_Parser.csprojResolveAssemblyReference.cache

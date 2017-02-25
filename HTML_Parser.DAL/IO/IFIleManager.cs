@@ -14,7 +14,6 @@ namespace HTML_Parser.DAL.IO
         void CreateFile(string path);
         void SaveString(string savingString, string filePath);
         string GetLastString(string filePath);
-        string GetAllContent(string filePath);
         bool IsFileExists(string path);
         void Watch(string path);
         void Delete(string path);

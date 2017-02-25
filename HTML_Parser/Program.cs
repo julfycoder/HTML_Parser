@@ -12,6 +12,7 @@ using HTML_Parser.Business.Threading;
 using HTML_Parser.DAL.Data;
 using HTML_Parser.DAL.IO;
 using HTML_Parser.DAL;
+using HTML_Parser.Business.Commands.Handlers;
 using HTML_Parser.Business.Commands;
 using StructureMap;
 
@@ -28,6 +29,9 @@ namespace HTML_Parser
                     s.WithDefaultConventions();
                     s.AssembliesFromApplicationBaseDirectory();
                 });
+                x.For<IHandlersChainFactory>().Use<HTML_ParserHandlersChainFactory>();
+                x.For<CommandHandler>().Use<ParseCommandHandler>();
+                x.For<CommandHandler>().Use<CreateSiteTreeCommandHandler>();
             });
 
             ICommandsManager manager = c.GetInstance<ICommandsManager>();

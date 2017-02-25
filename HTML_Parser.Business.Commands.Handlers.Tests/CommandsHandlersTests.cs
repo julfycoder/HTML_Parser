@@ -12,21 +12,23 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
         [TestMethod]
         public void CommandsHandlersInteractionTest_On_P_ReturnsParseCommand()
         {
-            ICommand command = HandleCommandCall(new string[] { "P", "10", "1", "false", "https://www.wikipedia.org" });
+            var command = HandleCommandCall(new string[] {"P", "10", "1", "false", "https://www.wikipedia.org"});
 
             Assert.IsInstanceOfType(command, typeof(ParseCommand));
         }
+
         [TestMethod]
         public void CommandsHandlersInteractionTest_On_CST_ReturnsCreateSiteTreeCommand()
         {
-            ICommand command = HandleCommandCall(new string[] { "CST", "https://www.wikipedia.org" });
+            var command = HandleCommandCall(new string[] {"CST", "https://www.wikipedia.org"});
 
             Assert.IsInstanceOfType(command, typeof(CreateSiteTreeCommand));
         }
+
         [TestMethod]
         public void HandleCommand_On_UnknownCommand_ReturnsNull()
         {
-            ICommand command = HandleCommandCall(new string[] { "Unknown" });
+            var command = HandleCommandCall(new string[] {"Unknown"});
 
             Assert.IsNull(command);
         }
@@ -36,8 +38,8 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
             var parserMock = new Mock<IParser>();
             var siteTreeBuilderMock = new Mock<ISiteTreeBuilder>();
 
-            ParseCommandHandler p = new ParseCommandHandler(parserMock.Object);
-            CreateSiteTreeCommandHandler cst = new CreateSiteTreeCommandHandler(siteTreeBuilderMock.Object);
+            var p = new ParseCommandHandler(parserMock.Object);
+            var cst = new CreateSiteTreeCommandHandler(siteTreeBuilderMock.Object);
 
             p.SetSuccessor(cst);
 

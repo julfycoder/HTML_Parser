@@ -8,6 +8,5 @@ namespace HTML_Parser.Business.Commands
 {
     public class CreateSiteTreeCommandInfo:CommandInfoBase
     {
-        public string Url { get; set; }
     }
 }

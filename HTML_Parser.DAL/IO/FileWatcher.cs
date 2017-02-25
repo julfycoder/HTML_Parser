@@ -11,22 +11,22 @@ namespace HTML_Parser.DAL.IO
     class FileWatcher
     {
         public event FileSystemEventHandler Changed;
-        string path;
+        readonly string _path;
         public FileWatcher(string path)
         {
-            this.path = path;
-            Thread watchForChangesThread = new Thread(WatchForChanges);
+            this._path = path;
+            var watchForChangesThread = new Thread(WatchForChanges);
             watchForChangesThread.Start();
         }
-        void WatchForChanges()
+        private void WatchForChanges()
         {
-            DateTime lastModified = File.GetLastWriteTime(path);
+            var lastModified = File.GetLastWriteTime(_path);
             while (true)
             {
-                if (File.GetLastWriteTime(path) != lastModified && Changed != null)
+                if (File.GetLastWriteTime(_path) != lastModified && Changed != null)
                 {
-                    Changed(null, new FileSystemEventArgs(WatcherChangeTypes.Changed, AppDomain.CurrentDomain.BaseDirectory, path));
-                    lastModified = File.GetLastWriteTime(path);
+                    Changed(null, new FileSystemEventArgs(WatcherChangeTypes.Changed, AppDomain.CurrentDomain.BaseDirectory, _path));
+                    lastModified = File.GetLastWriteTime(_path);
                 }
                 else Thread.Sleep(1000);
             }

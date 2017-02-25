@@ -1,0 +1,24 @@
+Create handlers by IoC with populated successors.
+
+File.ReadAllLines()
+
+Move SiteTreeStringBuilder to Bussiness and separate File and Db repositories
+commandString validation
+
+Refactor EF repository
+
+Why do we need different tables for different file types?
+
+ParsingStorage.Initialize why do we need to load all data.
+
+My:
+
+ParsingStorage - dictionaries instead lists
+
+HandleConcreteCommand
+
+ParseRepository - RemoveEntities<T>
+
+_commandKey
+
+Scan

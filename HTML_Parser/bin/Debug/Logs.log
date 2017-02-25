@@ -109,3 +109,20 @@
 2017-02-24 12:48:51.2749 INFO Start
 2017-02-24 12:48:59.2831 INFO Command!!!: P|10|4|false|http://info.cern.ch
 2017-02-24 12:48:59.6810 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
+2017-02-24 14:14:41.6358 INFO Start
+2017-02-24 14:14:51.6547 INFO Command!!!: P|10|4|false|http://info.cern.ch
+2017-02-24 14:14:51.8470 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
+2017-02-24 17:55:28.3117 INFO Start
+2017-02-24 18:00:22.1710 INFO Start
+2017-02-24 18:21:32.8061 INFO Start
+2017-02-25 13:19:41.4466 INFO Start
+2017-02-25 13:19:50.4689 INFO Command!!!: P|10|4|false|http://info.cern.ch
+2017-02-25 13:19:50.6544 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
+2017-02-25 14:11:14.5734 INFO Start
+2017-02-25 14:18:26.7243 INFO Start
+2017-02-25 14:18:41.8492 INFO Command!!!: P|10|4|false|http://info.cern.ch
+2017-02-25 14:18:42.3737 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
+2017-02-25 14:19:47.9146 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+2017-02-25 14:21:45.4195 INFO Command!!!: CST|http://info.cern.ch
+2017-02-25 14:21:45.8609 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-25 14:22:18.2439 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)

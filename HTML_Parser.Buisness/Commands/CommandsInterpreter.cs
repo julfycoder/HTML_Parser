@@ -9,17 +9,17 @@ namespace HTML_Parser.Business.Commands
 {
     public class CommandsInterpreter : ICommandsInterpreter
     {
-        ParseCommandHandler parseHandler;
-        public CommandsInterpreter(Parsing.IParser parser,Parsing.ISiteTreeBuilder builder)
+        private CommandHandler _handler;
+
+        public CommandsInterpreter(IHandlersChainFactory factory)
         {
-            parseHandler = new ParseCommandHandler(parser);
-            CreateSiteTreeCommandHandler cstHandler = new Handlers.CreateSiteTreeCommandHandler(builder);
-            parseHandler.SetSuccessor(cstHandler);
+            _handler = factory.CreateHandlersChain();
         }
+
         public ICommand Interpret(string commandString)
         {
-            string[] commandSegments = commandString.Split('|');
-            return parseHandler.HandleCommand(commandSegments);
+            var commandSegments = commandString.Split('|');
+            return _handler.HandleCommand(commandSegments);
         }
     }
 }

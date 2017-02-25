@@ -8,5 +8,6 @@ namespace HTML_Parser.Business.Commands
 {
     public abstract class CommandInfoBase
     {
+        public string Url { get; set; }
     }
 }

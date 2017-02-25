@@ -10,28 +10,23 @@ namespace HTML_Parser.Business.Commands
 {
     public class CreateSiteTreeCommand : ICommand
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        ISiteTreeBuilder builder;
-        string url;
-        public CreateSiteTreeCommand(ISiteTreeBuilder builder)
+        readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly ISiteTreeBuilder _builder;
+        private CreateSiteTreeCommandInfo _commandInfo;
+        public CreateSiteTreeCommand(ISiteTreeBuilder builder,CreateSiteTreeCommandInfo commandInfo)
         {
-            this.builder = builder;
+            _builder = builder;
+            _commandInfo = commandInfo;
         }
         public void Execute()
         {
             try
             {
-                logger.Info("Start to build site tree of '{0}'", url);
-                builder.CreateSiteTree(url);
-                logger.Info("End of site tree building");
+                _logger.Info("Start to build site tree of '{0}'", _commandInfo.Url);
+                _builder.CreateSiteTree(_commandInfo.Url);
+                _logger.Info("End of site tree building");
             }
-            catch (Exception e) { logger.Error(e.Message); }
-        }
-
-        public void Initialize(CommandInfoBase commandInfo)
-        {
-            CreateSiteTreeCommandInfo info = (CreateSiteTreeCommandInfo)commandInfo;
-            url = info.Url;
+            catch (Exception e) { _logger.Error(e.Message); }
         }
     }
 }

@@ -11,45 +11,51 @@ namespace HTML_Parser.Business.Commands
 {
     public class CommandsManager : ICommandsManager
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        Queue<ICommand> commands = new Queue<ICommand>();
-        ICommandsInterpreter commandsInterpreter;
-        IParsingCommandsRepository parsingCommandsRepository;
-        Thread t;
-        public CommandsManager(ICommandsInterpreter commandsInterpreter, IParsingCommandsRepository parsingCommandsRepository)
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Queue<ICommand> _commands = new Queue<ICommand>();
+        private readonly ICommandsInterpreter _commandsInterpreter;
+        IParsingCommandsRepository _parsingCommandsRepository;
+        private readonly Thread _t;
+
+        public CommandsManager(ICommandsInterpreter commandsInterpreter,
+            IParsingCommandsRepository parsingCommandsRepository)
         {
-            this.commandsInterpreter = commandsInterpreter;
-            this.parsingCommandsRepository = parsingCommandsRepository;
+            this._commandsInterpreter = commandsInterpreter;
+            this._parsingCommandsRepository = parsingCommandsRepository;
             parsingCommandsRepository.CommandAdded += WaitCommands;
-            t = new Thread(ExecuteNextCommand);
+            _t = new Thread(ExecuteNextCommand);
         }
+
         public void Start()
         {
-            t.Start();
-            logger.Info("Start");
+            _t.Start();
+            _logger.Info("Start");
         }
-        public void ExecuteNextCommand()
+
+        private void ExecuteNextCommand()
         {
             while (true)
             {
-                if (commands.Count > 0)
+                if (_commands.Count > 0)
                 {
-                    if (commands.Peek() != null) commands.Dequeue().Execute();
-                    else commands.Dequeue();
+                    if (_commands.Peek() != null) _commands.Dequeue().Execute();
+                    else _commands.Dequeue();
                     Console.WriteLine("Done");
                 }
                 else Thread.Sleep(600);
             }
         }
+
         public void Stop()
         {
-            t.Suspend();
-            logger.Info("Stop");
+            _t.Abort();
+            _logger.Info("Stop");
         }
+
         public void WaitCommands(object sender, ParsingCommandsEventArgs e)
         {
-            commands.Enqueue(commandsInterpreter.Interpret(e.CommandsString));
-            logger.Info("Command!!!: " + e.CommandsString);
+            _commands.Enqueue(_commandsInterpreter.Interpret(e.CommandsString));
+            _logger.Info("Command!!!: " + e.CommandsString);
         }
     }
 }

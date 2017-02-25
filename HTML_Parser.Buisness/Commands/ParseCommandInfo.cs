@@ -8,7 +8,6 @@ namespace HTML_Parser.Business.Commands
 {
     public class ParseCommandInfo : CommandInfoBase
     {
-        public string Url { get; set; }
         public int Depth { get; set; }
         public bool UseForeignLinks { get; set; }
         public int WorkerThreadsCount { get; set; }
