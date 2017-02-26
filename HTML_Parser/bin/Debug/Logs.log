@@ -1,128 +1,26 @@
-2017-02-23 15:21:57.8443 INFO Start
-2017-02-23 15:21:59.8601 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:22:00.2914 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:22:29.9081 INFO Start
-2017-02-23 15:22:32.9229 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:22:32.9390 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:23:04.0307 INFO Start
-2017-02-23 15:23:06.0395 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:23:06.4712 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:24:37.0223 INFO Start
-2017-02-23 15:24:47.1716 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:24:47.4186 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:25:41.9864 INFO Start
-2017-02-23 15:25:49.0889 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:25:49.3047 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:26:22.3133 INFO Start
-2017-02-23 15:26:24.3166 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:26:24.7330 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:29:04.8870 INFO Start
-2017-02-23 15:29:17.0427 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:29:17.1057 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:37:53.2032 INFO Start
-2017-02-23 15:37:56.2214 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:37:56.8223 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:39:20.1961 INFO Start
-2017-02-23 15:39:22.2208 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:39:22.6330 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:40:13.1939 INFO Start
-2017-02-23 15:40:55.9460 INFO Start
-2017-02-23 15:42:01.1777 INFO Start
-2017-02-23 15:42:02.1943 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:42:02.3884 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 15:42:54.8972 INFO Start
-2017-02-23 15:42:58.9283 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 15:42:59.1603 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 16:23:11.0168 INFO Start
-2017-02-23 16:23:14.0347 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 16:23:14.6323 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 16:31:46.7100 INFO Start
-2017-02-23 16:31:57.8762 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 16:31:58.3762 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 16:37:47.8958 INFO Start
-2017-02-23 16:37:49.9194 INFO Command!!!: P|10|2|false|https://www.wikipedia.org
-2017-02-23 16:37:50.3253 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 2, foreign links = False
-2017-02-23 17:24:20.7772 INFO Start
-2017-02-23 17:24:31.9086 INFO Command!!!: P|10|4|false|https://info.cern.ch
-2017-02-23 17:24:32.4239 INFO Start to parse 'https://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:24:37.2448 INFO End of parsing
-2017-02-23 17:24:44.2687 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 17:24:44.6217 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:29:27.9137 INFO Start
-2017-02-23 17:29:38.0703 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 17:29:38.3493 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:31:38.5646 INFO Start
-2017-02-23 17:31:42.5919 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 17:31:42.8385 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:38:31.5327 INFO Start
-2017-02-23 17:38:42.7072 INFO Command!!!: P|10|4|false|https://www.wikipedia.org
-2017-02-23 17:38:43.1762 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:38:56.8906 INFO Start
-2017-02-23 17:39:00.9418 INFO Command!!!: P|10|4|false|https://www.wikipedia.org
-2017-02-23 17:39:01.2044 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:51:28.1036 INFO Start
-2017-02-23 17:51:43.3011 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 17:51:43.4260 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 17:58:54.0229 INFO Start
-2017-02-23 17:58:59.0755 INFO Command!!!: P|20|4|false|http://info.cern.ch
-2017-02-23 17:58:59.5367 INFO Start to parse 'http://info.cern.ch', with 20 threads, with depth = 4, foreign links = False
-2017-02-23 18:05:48.8340 INFO Start
-2017-02-23 18:05:51.8708 INFO Command!!!: P|20|4|false|http://info.cern.ch
-2017-02-23 18:05:52.4552 INFO Start to parse 'http://info.cern.ch', with 20 threads, with depth = 4, foreign links = False
-2017-02-23 18:08:19.1969 INFO Start
-2017-02-23 18:08:23.2503 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:08:23.4821 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:12:59.5423 INFO Start
-2017-02-23 18:13:05.6242 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:13:05.6404 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:31:13.5652 INFO Start
-2017-02-23 18:31:14.5838 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:31:14.7938 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:32:04.2949 INFO Start
-2017-02-23 18:32:05.2995 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:32:05.5151 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:32:54.4891 INFO Start
-2017-02-23 18:32:57.5116 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:32:58.1276 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:33:34.1876 INFO Start
-2017-02-23 18:34:47.8905 INFO Start
-2017-02-23 18:34:48.8916 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:34:49.1073 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:37:57.6737 INFO Start
-2017-02-23 18:37:59.7098 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:38:00.1103 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:43:42.4388 INFO Start
-2017-02-23 18:43:44.4643 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:43:44.8797 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:44:50.4609 INFO Start
-2017-02-23 18:44:52.4702 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 18:44:52.8706 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 18:57:11.5271 INFO Start
-2017-02-23 18:57:20.6440 INFO Command!!!: P|10|4|false|https://www.wikipedia.org
-2017-02-23 18:57:20.6596 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 4, foreign links = False
-2017-02-23 19:19:16.0346 INFO Start
-2017-02-23 19:19:27.1598 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-23 19:19:27.6134 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-24 12:31:51.6947 INFO Start
-2017-02-24 12:32:05.7054 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-24 12:32:06.1088 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-24 12:48:51.2749 INFO Start
-2017-02-24 12:48:59.2831 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-24 12:48:59.6810 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-24 14:14:41.6358 INFO Start
-2017-02-24 14:14:51.6547 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-24 14:14:51.8470 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-24 17:55:28.3117 INFO Start
-2017-02-24 18:00:22.1710 INFO Start
-2017-02-24 18:21:32.8061 INFO Start
-2017-02-25 13:19:41.4466 INFO Start
-2017-02-25 13:19:50.4689 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-25 13:19:50.6544 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-25 14:11:14.5734 INFO Start
-2017-02-25 14:18:26.7243 INFO Start
-2017-02-25 14:18:41.8492 INFO Command!!!: P|10|4|false|http://info.cern.ch
-2017-02-25 14:18:42.3737 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 4, foreign links = False
-2017-02-25 14:19:47.9146 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
-2017-02-25 14:21:45.4195 INFO Command!!!: CST|http://info.cern.ch
-2017-02-25 14:21:45.8609 INFO Start to build site tree of 'http://info.cern.ch'
-2017-02-25 14:22:18.2439 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+2017-02-26 13:20:56.3797 INFO Start
+2017-02-26 13:21:08.5049 INFO Command!!!: CST|http://info.cern.ch
+2017-02-26 13:21:09.0569 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-26 13:21:09.2696 ERROR The operation cannot be completed because the DbContext has been disposed.
+2017-02-26 13:22:13.2335 INFO Start
+2017-02-26 13:22:21.8326 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:22:22.3302 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-26 13:22:22.6232 ERROR The operation cannot be completed because the DbContext has been disposed.
+2017-02-26 13:23:55.8466 INFO Start
+2017-02-26 13:24:10.9692 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:24:10.9692 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-26 13:26:09.2484 INFO Start
+2017-02-26 13:26:15.3530 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:26:15.8941 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-26 13:29:36.3487 INFO Start
+2017-02-26 13:29:51.4801 INFO Command!!!: CST|http://info.cern.ch
+2017-02-26 13:29:51.5494 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-26 13:29:51.6913 ERROR The operation cannot be completed because the DbContext has been disposed.
+2017-02-26 13:30:27.0140 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:30:27.5116 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-26 13:40:36.3483 INFO Start
+2017-02-26 13:40:50.6152 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:40:50.9282 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-26 13:41:58.1355 INFO Start
+2017-02-26 13:42:07.1130 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-26 13:42:07.5378 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HTML_Parser.Business.Parsing
+namespace HTML_Parser.Business.SiteTree
 {
     public interface ISiteTreeBuilder
     {

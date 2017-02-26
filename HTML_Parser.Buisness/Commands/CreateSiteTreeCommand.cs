@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HTML_Parser.Business.Parsing;
+using HTML_Parser.Business.SiteTree;
 using NLog;
 
 namespace HTML_Parser.Business.Commands

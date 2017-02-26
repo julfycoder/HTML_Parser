@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HTML_Parser.Business.Parsing;
+using HTML_Parser.Business.SiteTree;
 using Moq;
 
 namespace HTML_Parser.Business.Commands.Handlers.Tests
@@ -40,14 +41,13 @@ namespace HTML_Parser.Business.Commands.Handlers.Tests
 
         CommandHandler CreateHandlersChainCall()
         {
-            //var parserMock = new Mock<IParser>();
-            //var cstMock = new Mock<ISiteTreeBuilder>();
-            //HTML_ParserHandlersChainFactory factory =
-            //    new HTML_ParserHandlersChainFactory(new CommandHandler[]
-            //        {new ParseCommandHandler(parserMock.Object), new CreateSiteTreeCommandHandler(cstMock.Object)});
+            var parserMock = new Mock<IParser>();
+            var cstMock = new Mock<ISiteTreeBuilder>();
+            HTML_ParserHandlersChainFactory factory =
+                new HTML_ParserHandlersChainFactory(new CommandHandler[]
+                    {new ParseCommandHandler(parserMock.Object), new CreateSiteTreeCommandHandler(cstMock.Object)});
 
-            //return factory.CreateHandlersChain();
-            return null;
+            return factory.CreateHandlersChain();
         }
     }
 }

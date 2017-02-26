@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using HTML_Parser.Business.Parsing;
 using HTML_Parser.Business.Commands;
+using HTML_Parser.Business.SiteTree;
 
 namespace HTML_Parser.Business.Commands.Handlers.Tests
 {

@@ -23,18 +23,18 @@ namespace HTML_Parser.Business.Commands
 
         public void Execute()
         {
-            try
-            {
+            //try
+            //{
                 _logger.Info("Start to parse '{0}', with {1} threads, with depth = {2}, foreign links = {3}",
                     _commandInfo.Url, _commandInfo.WorkerThreadsCount, _commandInfo.Depth, _commandInfo.UseForeignLinks);
                 _parser.Start(_commandInfo.Url, _commandInfo.WorkerThreadsCount, _commandInfo.Depth,
                     _commandInfo.UseForeignLinks);
                 _logger.Info("End of parsing");
-            }
-            catch (Exception e)
-            {
-                _logger.Error(e.Message);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    _logger.Error(e.Message);
+            //}
         }
     }
 }
