@@ -69,7 +69,9 @@
     <Compile Include="Commands\ParseCommandInfo.cs" />
     <Compile Include="Parsing\IParser.cs" />
     <Compile Include="SiteTree\ISiteTreeBuilder.cs" />
+    <Compile Include="SiteTree\ISiteTreeStringBuilder.cs" />
     <Compile Include="SiteTree\SiteTreeBuilder.cs" />
+    <Compile Include="SiteTree\SiteTreeStringBuilder.cs" />
     <Compile Include="Threading\IThreadsManager.cs" />
     <Compile Include="Threading\ThreadsManager.cs" />
     <Compile Include="Web\HTMLDocumentManager.cs" />

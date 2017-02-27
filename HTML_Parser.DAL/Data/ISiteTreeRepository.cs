@@ -9,6 +9,6 @@ namespace HTML_Parser.DAL.Data
 {
     public interface ISiteTreeRepository
     {
-        void SaveSiteTree(string url, List<WebPage> webPages);
+        void SaveSiteTree(string url, List<string>siteTree);
     }
 }

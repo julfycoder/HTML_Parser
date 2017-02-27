@@ -12,42 +12,38 @@ namespace HTML_Parser.DAL.Data
 {
     public class SiteTreeRepository : ISiteTreeRepository
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        IFileManager fileManager;
-        ISiteTreeStringBuilder siteTreeStringBuilder;
-        public SiteTreeRepository(IFileManager fileManager, ISiteTreeStringBuilder siteTreeStringBuilder)
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly IFileManager _fileManager;
+        public SiteTreeRepository(IFileManager fileManager)
         {
-            this.fileManager = fileManager;
-            this.siteTreeStringBuilder = siteTreeStringBuilder;
+            _fileManager = fileManager;
         }
-        public void SaveSiteTree(string url, List<WebPage> webPages)
+        public void SaveSiteTree(string url, List<string> siteTree)
         {
-            logger.Info("Saving site tree...");
+            _logger.Info("Saving site tree...");
             try
             {
-                DateTime dt = DateTime.Now;
-                if (webPages.Any(p => p.URL == url))
+                var fileName = CreateFileName(url);
+                _logger.Info("File name: " + fileName);
+                _fileManager.CreateFile(fileName);
+                _fileManager.SaveString(DateTime.Now.ToString(), fileName);
+                foreach (var link in siteTree)
                 {
-                    WebPage page = webPages.First(p => p.URL == url);
-                    List<string> siteTree = siteTreeStringBuilder.CreateSiteTree(page, webPages);
-                    string fileName = CreateFileName(url);
-                    logger.Info("File name: " + fileName);
-                    fileManager.CreateFile(fileName);
-                    fileManager.SaveString(DateTime.Now.ToString(), fileName);
-                    foreach (string link in siteTree)
-                    {
-                        fileManager.SaveString(link, fileName);
-                    }
+                    _fileManager.SaveString(link, fileName);
                 }
             }
-            catch(Exception e) { logger.Error(e.Message); }
+            catch (Exception e)
+            {
+                _logger.Error(e.Message);
+            }
         }
-        string CreateFileName(string url)
+
+        private string CreateFileName(string url)
         {
-            string fileExtension = ".txt";
-            string fileName = AppDomain.CurrentDomain.BaseDirectory + "( " + new Uri(url).Host + " )__SiteTree";
-            int count = 0;
-            while (fileManager.IsFileExists(fileName + count.ToString() + fileExtension))
+            const string fileExtension = ".txt";
+            var fileName = AppDomain.CurrentDomain.BaseDirectory + "( " + new Uri(url).Host + " )__SiteTree";
+            var count = 0;
+            while (_fileManager.IsFileExists(fileName + count.ToString() + fileExtension))
             {
                 count++;
             }

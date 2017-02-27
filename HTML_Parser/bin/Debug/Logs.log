@@ -24,3 +24,45 @@
 2017-02-26 13:41:58.1355 INFO Start
 2017-02-26 13:42:07.1130 INFO Command!!!: P|10|1|false|http://info.cern.ch
 2017-02-26 13:42:07.5378 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 12:23:00.2535 INFO Start
+2017-02-27 12:23:10.3433 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-27 12:23:10.5848 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 12:25:00.3117 INFO Start
+2017-02-27 12:25:05.3312 INFO Command!!!: P|10|1|false|http://info.cern.ch
+2017-02-27 12:25:05.7475 INFO Start to parse 'http://info.cern.ch', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 12:25:12.2471 INFO End of parsing
+2017-02-27 12:25:22.5455 INFO Command!!!: CST|http://info.cern.ch
+2017-02-27 12:25:22.6458 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-27 12:25:22.6458 INFO Saving site tree...
+2017-02-27 12:25:22.6458 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( info.cern.ch )__SiteTree10.txt
+2017-02-27 12:25:22.6836 INFO End of site tree building
+2017-02-27 12:38:12.3614 INFO Start
+2017-02-27 12:38:15.4060 INFO Command!!!: CST|http://info.cern.ch
+2017-02-27 12:38:15.4217 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-27 12:38:19.3141 INFO Saving site tree...
+2017-02-27 12:38:19.3297 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( info.cern.ch )__SiteTree11.txt
+2017-02-27 12:38:19.3766 INFO End of site tree building
+2017-02-27 12:40:34.3095 INFO Start
+2017-02-27 12:40:37.3232 INFO Command!!!: CST|http://info.cern.ch
+2017-02-27 12:40:37.3545 INFO Start to build site tree of 'http://info.cern.ch'
+2017-02-27 12:40:41.2607 INFO Saving site tree...
+2017-02-27 12:40:41.2607 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( info.cern.ch )__SiteTree12.txt
+2017-02-27 12:40:41.3141 INFO End of site tree building
+2017-02-27 12:41:50.1499 INFO Start
+2017-02-27 12:42:01.2712 INFO Command!!!: CST|https://www.wikipedia.org
+2017-02-27 12:42:01.6887 INFO Start to build site tree of 'https://www.wikipedia.org'
+2017-02-27 12:42:05.6072 INFO End of site tree building
+2017-02-27 12:42:26.6152 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 12:42:27.0465 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 12:42:38.4478 INFO Start
+2017-02-27 12:42:45.4909 INFO Command!!!: CST|https://www.wikipedia.org
+2017-02-27 12:42:45.7388 INFO Start to build site tree of 'https://www.wikipedia.org'
+2017-02-27 12:42:49.6477 INFO Saving site tree...
+2017-02-27 12:42:49.6477 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( www.wikipedia.org )__SiteTree4.txt
+2017-02-27 12:42:49.6477 INFO End of site tree building
+2017-02-27 12:43:36.3592 INFO Start
+2017-02-27 12:43:39.3686 INFO Command!!!: CST|https://www.wikipedia.org
+2017-02-27 12:43:39.4061 INFO Start to build site tree of 'https://www.wikipedia.org'
+2017-02-27 12:43:43.3214 INFO Saving site tree...
+2017-02-27 12:43:43.3214 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( www.wikipedia.org )__SiteTree5.txt
+2017-02-27 12:43:43.3370 INFO End of site tree building

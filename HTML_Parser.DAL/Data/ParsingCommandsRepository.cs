@@ -31,7 +31,7 @@ namespace HTML_Parser.DAL.Data
         }
         void UpdateCommandAdded(object sender, FileSystemEventArgs e)
         {
-            if (CommandAdded != null) CommandAdded(this, new ParsingCommandsEventArgs(GetLastCommand()));
+            CommandAdded?.Invoke(this, new ParsingCommandsEventArgs(GetLastCommand()));
         }
     }
 }

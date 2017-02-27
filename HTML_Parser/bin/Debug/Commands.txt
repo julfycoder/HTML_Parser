@@ -1,1 +1,1 @@
-P|10|1|false|http://info.cern.ch
+CST|https://www.wikipedia.org

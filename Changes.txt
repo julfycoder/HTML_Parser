@@ -2,7 +2,7 @@ Create handlers by IoC with populated successors.
 
 File.ReadAllLines()
 
-Move SiteTreeStringBuilder to Bussiness and separate File and Db repositories
+Separate File and Db repositories
 commandString validation
 
 Refactor EF repository
@@ -21,8 +21,6 @@ _commandKey
 
 Scan
 
-SiteTreeBuilder - SaveSiteTree - string SiteTree - in opposite of List<WebPage> webPages
-
 Parser - StoringPages ?
 
-A fiew commands in the file
+A few commands in the file
