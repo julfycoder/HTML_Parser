@@ -16,11 +16,9 @@ namespace HTML_Parser.Business.Parsing
         void SaveImageFiles(IEnumerable<ImageFile> imageFIles);
         void SaveWebPage(object state);
         void SaveWebPages(IEnumerable<WebPage> pages);
-        WebPage GetWebPage(int id);
         WebPage GetWebPage(string url);
         IEnumerable<WebPage> GetWebPages();
         IEnumerable<WebSite> GetWebSites();
-        WebSite GetWebSite(int id);
         WebSite GetWebSite(string url);
         void SaveWebSite(object state);
         IEnumerable<ImageFile> GetImages();

@@ -11,126 +11,122 @@ namespace HTML_Parser.Business.Parsing
 {
     public class ParsingStorage : IParsingStorage
     {
-        IParseRepository repository;
+        readonly IParseRepository _repository;
 
-        List<WebPage> dbPages = new List<WebPage>();
-        List<CssFile> dbCss = new List<CssFile>();
-        List<ImageFile> dbImages = new List<ImageFile>();
-        List<WebSite> dbSites = new List<WebSite>();
+        private readonly Dictionary<string, WebPage> _dbPages = new Dictionary<string, WebPage>();
+        private List<CssFile> _dbCss = new List<CssFile>();
+        private List<ImageFile> _dbImages = new List<ImageFile>();
+        private List<WebSite> _dbSites = new List<WebSite>();
 
         public ParsingStorage(IParseRepository parseRepository)
         {
-            this.repository = parseRepository;
+            this._repository = parseRepository;
 
         }
         public void Initialize()
         {
-            dbPages = repository.GetWebPages().ToList();
-            dbImages = repository.GetImageFiles().ToList();
-            dbCss = repository.GetCssFiles().ToList();
-            dbSites = repository.GetWebSites().ToList();
+            foreach(var page in _repository.GetEntities<WebPage>())_dbPages.Add(page.URL,page);
+            _dbImages = _repository.GetEntities<ImageFile>().ToList();
+            _dbCss = _repository.GetEntities<CssFile>().ToList();
+            _dbSites = _repository.GetEntities<WebSite>().ToList();
         }
         public void SaveWebPage(object state)
         {
-            WebPage page = (WebPage)state;
-            if (dbPages != null && (!dbPages.Any() || dbPages.All(p => p.URL != page.URL)))
+            var page = (WebPage)state;
+            if (_dbPages != null && (!_dbPages.Any() || _dbPages.ContainsKey(page.URL)))
             {
-                lock (repository)
+                lock (_repository)
                 {
-                    repository.AddEntity(page);
-                    dbPages.Add(repository.GetWebPages().Last());
+                    _repository.AddEntity(page);
+                    var dbPage = _repository.GetEntities<WebPage>().ToList().Last();
+                    _dbPages.Add(dbPage.URL,dbPage);
                 }
             }
         }
         public void SaveWebPages(IEnumerable<WebPage> pages)
         {
-            lock (repository) repository.AddEntities(pages);
-            foreach (WebPage page in pages) dbPages.Add(repository.GetWebPage(page.URL));
+            lock (_repository) _repository.AddEntities(pages);
+            foreach (var page in pages) _dbPages.Add(page.URL,_repository.GetWebPage(page.URL));
         }
         public void SaveCssFile(object state)
         {
-            CssFile css = (CssFile)state;
-            if (dbCss != null && dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
+            var css = (CssFile)state;
+            if (_dbCss != null && _dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
             {
-                lock (repository) repository.AddEntity(css);
+                lock (_repository) _repository.AddEntity(css);
             }
         }
         public void SaveCssFiles(IEnumerable<CssFile> cssFiles)
         {
-            foreach (CssFile css in cssFiles)
+            foreach (var css in cssFiles)
             {
-                if (dbCss != null && dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
+                if (_dbCss != null && _dbCss.All(c => c.URL != css.URL && c.WebPageId != css.WebPageId))
                 {
-                    lock (repository) repository.AddEntity(css);
+                    lock (_repository) _repository.AddEntity(css);
                 }
             }
         }
         public void SaveImageFile(object state)
         {
-            ImageFile image = (ImageFile)state;
-            if (dbImages != null && dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
+            var image = (ImageFile)state;
+            if (_dbImages != null && _dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
             {
-                lock (repository) repository.AddEntity(image);
+                lock (_repository) _repository.AddEntity(image);
             }
         }
         public void SaveImageFiles(IEnumerable<ImageFile> imageFiles)
         {
-            foreach (ImageFile image in imageFiles)
+            foreach (var image in imageFiles)
             {
-                if (dbImages != null && dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
+                if (_dbImages != null && _dbImages.All(i => i.URL != image.URL && i.WebPageId != image.WebPageId))
                 {
-                    lock (repository) repository.AddEntity(image);
+                    lock (_repository) _repository.AddEntity(image);
                 }
             }
         }
-        public WebPage GetWebPage(int id)
-        {
-            return dbPages.First(p => p.Id == id);
-        }
+
         public WebPage GetWebPage(string url)
         {
-            return repository.GetWebPage(url);
-        }
-        public IEnumerable<WebPage> GetWebPages()
-        {
-            return dbPages;
-        }
-
-        public IEnumerable<WebSite> GetWebSites()
-        {
-            return dbSites;
-        }
-
-        public WebSite GetWebSite(int id)
-        {
-            return dbSites.First(s => s.Id == id);
+            if (_dbPages.ContainsKey(url))
+                return _dbPages[url];
+            return null;
         }
 
         public WebSite GetWebSite(string url)
         {
-            return dbSites.First(s => s.URL == url);
+            return _dbSites.First(s => s.URL == url);
         }
 
         public void SaveWebSite(object state)
         {
-            WebSite site = (WebSite)state;
-            if (dbSites != null && (!dbSites.Any() || dbSites.All(p => p.URL != site.URL)))
+            var site = (WebSite)state;
+            if (_dbSites != null && (!_dbSites.Any() || _dbSites.All(p => p.URL != site.URL)))
             {
-                lock (repository)
+                lock (_repository)
                 {
-                    repository.AddEntity(site);
-                    dbSites.Add(repository.GetWebSites().Last());
+                    _repository.AddEntity(site);
+                    _dbSites.Add(_repository.GetEntities<WebSite>().ToList().Last());
                 }
             }
+        }
+        public IEnumerable<WebPage> GetWebPages()
+        {
+            return _dbPages.Values;
+        }
+
+        public IEnumerable<WebSite> GetWebSites()
+        {
+            return _dbSites;
         }
 
         public IEnumerable<ImageFile> GetImages()
         {
-            return repository.GetImageFiles();
+            return _dbImages;
         }
+
         public IEnumerable<CssFile> GetCssFiles()
         {
-            return repository.GetCssFiles();
+            return _dbCss;
         }
     }
 }

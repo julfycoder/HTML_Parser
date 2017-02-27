@@ -66,3 +66,56 @@
 2017-02-27 12:43:43.3214 INFO Saving site tree...
 2017-02-27 12:43:43.3214 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( www.wikipedia.org )__SiteTree5.txt
 2017-02-27 12:43:43.3370 INFO End of site tree building
+2017-02-27 13:05:22.4409 INFO Start
+2017-02-27 13:05:27.4761 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 13:05:27.8910 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 13:05:48.5358 INFO Start
+2017-02-27 13:05:55.5845 INFO Command!!!: CST|https://www.wikipedia.org
+2017-02-27 13:05:55.8006 INFO Start to build site tree of 'https://www.wikipedia.org'
+2017-02-27 13:05:59.7292 INFO Saving site tree...
+2017-02-27 13:05:59.7292 INFO File name: C:\Users\bbesedin\Documents\Visual Studio 2015\Projects\HTML_Parser\HTML_Parser\bin\Debug\( www.wikipedia.org )__SiteTree6.txt
+2017-02-27 13:05:59.7292 INFO End of site tree building
+2017-02-27 13:21:33.0127 INFO Start
+2017-02-27 13:21:39.0207 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 13:21:39.0676 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 13:33:12.1197 INFO Start
+2017-02-27 13:33:15.1267 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 13:33:15.7412 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 13:51:50.5444 INFO Start
+2017-02-27 13:51:54.5610 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 13:51:54.7771 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 13:54:06.9319 INFO Start
+2017-02-27 13:54:09.9366 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 13:54:09.9532 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:03:56.3254 INFO Start
+2017-02-27 15:04:00.3363 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:04:00.5686 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:05:05.0801 INFO Start
+2017-02-27 15:05:23.2891 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:05:23.4206 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:06:40.7287 INFO Start
+2017-02-27 15:07:12.0980 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:07:12.5009 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:07:37.9948 INFO Start
+2017-02-27 15:07:45.0322 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:07:45.2644 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:12:27.4866 INFO Start
+2017-02-27 15:12:42.6527 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:12:42.7998 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:15:19.1960 INFO Start
+2017-02-27 15:15:22.2016 INFO Command!!!: P|10|1|false|https://www.wikipedia.org
+2017-02-27 15:15:22.8005 INFO Start to parse 'https://www.wikipedia.org', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:17:46.6657 INFO Start
+2017-02-27 15:17:57.8249 INFO Command!!!: P|10|1|false|https://www.facebook.com
+2017-02-27 15:17:58.2884 INFO Start to parse 'https://www.facebook.com', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:18:12.9948 INFO End of parsing
+2017-02-27 15:18:56.3432 INFO Start
+2017-02-27 15:19:00.3690 INFO Command!!!: P|10|1|false|https://www.facebook.com
+2017-02-27 15:19:00.5695 INFO Start to parse 'https://www.facebook.com', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:19:16.7810 INFO End of parsing
+2017-02-27 15:19:37.3191 INFO Command!!!: P|10|1|false|https://www.facebook.com
+2017-02-27 15:19:37.5197 INFO Start to parse 'https://www.facebook.com', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:21:47.9646 INFO Start
+2017-02-27 15:21:49.9671 INFO Command!!!: P|10|1|false|https://www.facebook.com
+2017-02-27 15:21:50.3834 INFO Start to parse 'https://www.facebook.com', with 10 threads, with depth = 1, foreign links = False
+2017-02-27 15:22:13.1854 INFO End of parsing

@@ -46,27 +46,9 @@ namespace HTML_Parser.DAL.Data
             //}
         }
 
-        public IEnumerable<CssFile> GetCssFiles()
+        public IEnumerable<T> GetEntities<T>() where T:Entity
         {
-            //using (var context = new HTML_ParserDbContext())
-            //{
-                return context.CssFiles;
-            //}
-        }
-
-        public IEnumerable<WebPage> GetWebPages()
-        {
-            //using (var context = new HTML_ParserDbContext())
-            //{
-                return context.WebPages;
-            //}
-        }
-        public WebPage GetWebPage(int id)
-        {
-            using (var context = new HTML_ParserDbContext())
-            {
-                return context.WebPages.First(p => p.Id == id);
-            }
+            return context.Set<T>();
         }
         public WebPage GetWebPage(string url)
         {
@@ -82,15 +64,6 @@ namespace HTML_Parser.DAL.Data
                 }
             //}
         }
-
-        public IEnumerable<ImageFile> GetImageFiles()
-        {
-            //using (var context = new HTML_ParserDbContext())
-            //{
-                return context.ImageFiles;
-            //}
-        }
-
         public void RemoveEntity<T>(T entity) where T : Entity
         {
             //using (var context = new HTML_ParserDbContext())
@@ -99,15 +72,6 @@ namespace HTML_Parser.DAL.Data
                 context.SaveChanges();
             //}
         }
-
-        public IEnumerable<WebSite> GetWebSites()
-        {
-            //using (var context = new HTML_ParserDbContext())
-            //{
-                return context.WebSites;
-            //}
-        }
-
         public WebSite GetWebSite(string url)
         {
             //using (var context = new HTML_ParserDbContext())
