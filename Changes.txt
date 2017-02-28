@@ -18,3 +18,5 @@ _commandKey
 Scan
 
 A few commands in the file
+
+lock

@@ -225,7 +225,7 @@ namespace HTML_Parser.Business.Parsing
         {
             foreach (var key in _currentPagesImages.Keys)
                 lock (_currentPagesImages)
-                    key.WebPageId = _parsingStorage.GetWebPage(_currentPagesImages[key]).Id;//_storagePages[_currentPagesImages[key]].Id;
+                    key.WebPageId = _parsingStorage.GetWebPage(_currentPagesImages[key]).Id;
             _parsingStorage.SaveImageFiles(_currentPagesImages.Keys);
             _currentPagesImages.Clear();
         }
